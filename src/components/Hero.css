@@ -1,0 +1,15 @@
+.hero {
+  display: flex;
+}
+
+.hero-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 100px;
+}
+
+.hero-image {
+  height: 400px;
+  width: 400px;
+}
