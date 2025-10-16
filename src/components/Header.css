@@ -38,7 +38,7 @@
   align-items: center;
 }
 
-.nav-links li button {
+.nav-button {
   background: none;
   border: none;
   font-size: 16px;
@@ -47,9 +47,4 @@
   height: 100%;
   display: flex;
   align-items: center;
-  transition: background-color 0.3s ease;
-}
-
-.nav-links li button:hover {
-  background-color: #f0f0f0;
 }
