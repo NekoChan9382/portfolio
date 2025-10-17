@@ -1,4 +1,5 @@
 import React from "react";
+import "./Projects.css";
 
 type ProjectContent = {
   name: string;
@@ -16,6 +17,13 @@ const Projects: React.FC = () => {
       link: "https://github.com/Team-Nullpo/NullTasker",
       img: "./assets/NullTasker.png",
       techs: ["HTML", "CSS", "JavaScript", "Node.js"],
+    },
+    {
+      name: "Undefined",
+      description: "なにか",
+      link: "./#",
+      img: "./logo192.png",
+      techs: ["Null"],
     },
   ];
   const projectCards = projectList.map((p) => {
