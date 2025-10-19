@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  border-top: 1px solid black;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
