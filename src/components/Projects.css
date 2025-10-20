@@ -1,6 +1,9 @@
 .projects {
-  display: flex;
   margin: 0px 300px 0px 300px;
+}
+
+.cards {
+  display: flex;
 }
 
 .project-card {

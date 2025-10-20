@@ -29,7 +29,14 @@ const Projects: React.FC = () => {
   const projectCards = projectList.map((p) => {
     return <ProjectCard key={p.name} content={p} />;
   });
-  return <section className="projects">{projectCards}</section>;
+  return (
+    <section className="projects">
+      <div className="section-title">
+        <h2>Projects</h2>
+      </div>
+      <div className="cards">{projectCards}</div>
+    </section>
+  );
 };
 
 type ProjectCardProps = { content: ProjectContent };
