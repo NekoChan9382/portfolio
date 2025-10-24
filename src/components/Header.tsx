@@ -6,7 +6,7 @@ const Header: React.FC = () => {
   const navs = buttonLabels.map((label) => {
     return (
       <li>
-        <button className="nav-button">{label}</button>
+        <button className="nav-button" key={label}>{label}</button>
       </li>
     );
   });
