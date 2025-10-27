@@ -15,14 +15,14 @@ const Projects: React.FC = () => {
       name: "NullTasker",
       description: "チーム向け総合タスク管理システム",
       link: "https://github.com/Team-Nullpo/NullTasker",
-      img: "./assets/NullTasker.png",
+      img: "/assets/NullTasker.png",
       techs: ["HTML", "CSS", "JavaScript", "Node.js"],
     },
     {
       name: "Undefined",
       description: "なにか",
       link: "./#",
-      img: "./logo192.png",
+      img: "/logo192.png",
       techs: ["Null"],
     },
   ];
@@ -44,7 +44,7 @@ type ProjectCardProps = { content: ProjectContent };
 const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
   const { name, description, link, img, techs } = content;
   const techSpan = techs.map((tech) => {
-    return <span className="tech-tag">{tech}</span>;
+    return <span className="tech-tag" key={tech}>{tech}</span>;
   });
   return (
     <div className="project-card">

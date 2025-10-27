@@ -5,8 +5,8 @@ const Header: React.FC = () => {
   const buttonLabels: string[] = ["About", "Skills", "Projects"];
   const navs = buttonLabels.map((label) => {
     return (
-      <li>
-        <button className="nav-button" key={label}>{label}</button>
+      <li key={label}>
+        <button className="nav-button">{label}</button>
       </li>
     );
   });
