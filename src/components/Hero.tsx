@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
           </span>
         </div>
         <div className="hero-image">
-          <img src="/assets/kanibaPigeon.jpg" alt="kanibaPigeon"></img>
+          <img src={`${process.env.PUBLIC_URL || ''}/assets/kanibaPigeon.jpg`} alt="kanibaPigeon"></img>
         </div>
       </div>
     </section>
