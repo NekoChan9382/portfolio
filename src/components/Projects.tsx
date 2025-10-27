@@ -15,14 +15,14 @@ const Projects: React.FC = () => {
       name: "NullTasker",
       description: "チーム向け総合タスク管理システム",
       link: "https://github.com/Team-Nullpo/NullTasker",
-      img: "/assets/NullTasker.png",
+      img: "assets/NullTasker.png",
       techs: ["HTML", "CSS", "JavaScript", "Node.js"],
     },
     {
       name: "Undefined",
       description: "なにか",
       link: "./#",
-      img: "/logo192.png",
+      img: "logo192.png",
       techs: ["Null"],
     },
   ];
