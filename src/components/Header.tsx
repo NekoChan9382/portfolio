@@ -13,12 +13,14 @@ const Header: React.FC = () => {
 
   return (
     <header className="header">
-      <nav className="nav">
-        <div className="nav-icon">
-          <span>Portfolio</span>
-        </div>
-        <ul className="nav-links">{navs}</ul>
-      </nav>
+      <div className="header-container">
+        <nav className="nav">
+          <div className="nav-icon">
+            <span>Portfolio</span>
+          </div>
+          <ul className="nav-links">{navs}</ul>
+        </nav>
+      </div>
     </header>
   );
 };
