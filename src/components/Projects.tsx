@@ -31,10 +31,12 @@ const Projects: React.FC = () => {
   });
   return (
     <section className="projects">
-      <div className="section-title">
-        <h2>Projects</h2>
+      <div className="section-content">
+        <div className="section-title">
+          <h2>Projects</h2>
+        </div>
+        <div className="cards">{projectCards}</div>
       </div>
-      <div className="cards">{projectCards}</div>
     </section>
   );
 };
@@ -44,7 +46,11 @@ type ProjectCardProps = { content: ProjectContent };
 const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
   const { name, description, link, img, techs } = content;
   const techSpan = techs.map((tech) => {
-    return <span className="tech-tag" key={tech}>{tech}</span>;
+    return (
+      <span className="tech-tag" key={tech}>
+        {tech}
+      </span>
+    );
   });
   return (
     <div className="project-card">

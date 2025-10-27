@@ -16,10 +16,12 @@ const Skills: React.FC = () => {
   });
   return (
     <section className="skills-section">
-      <div className="section-title">
-        <h2>Skills</h2>
+      <div className="section-content">
+        <div className="section-title">
+          <h2>Skills</h2>
+        </div>
+        <div className="cards">{skillCards}</div>
       </div>
-      <div className="cards">{skillCards}</div>
     </section>
   );
 };
