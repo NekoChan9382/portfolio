@@ -1,7 +1,3 @@
-.projects {
-  margin: 0px 300px 0px 300px;
-}
-
 .cards {
   display: flex;
 }
@@ -26,6 +22,7 @@
 .project-detail {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 300px;
   width: 100%;
 }

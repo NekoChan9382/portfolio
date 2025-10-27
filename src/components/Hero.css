@@ -1,5 +1,12 @@
 .hero {
   display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.hero-content {
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .hero-image {
