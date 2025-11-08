@@ -19,11 +19,18 @@ const Projects: React.FC = () => {
       techs: ["HTML", "CSS", "JavaScript", "Node.js"],
     },
     {
-      name: "Undefined",
-      description: "なにか",
-      link: "./#",
-      img: "./logo192.png",
-      techs: ["Null"],
+      name: "Train Info Board",
+      description: "APIを通じて列車案内板を表示するツール",
+      link: "https://colab.research.google.com/drive/1DtQIWg34rP2i_r0hwOCLPYTyFxwjilA7?usp=sharing",
+      img: "./null.png",
+      techs: ["Python", "Colab"],
+    },
+    {
+      name: "PR Issue Notifier",
+      description: "GitHubのPRに関連するIssueを通知するツール",
+      link: "https://github.com/NekoChan9382/pr-issue-notification",
+      img: "./null.png",
+      techs: ["Elixir", "GitHub"],
     },
   ];
   const projectCards = projectList.map((p) => {
