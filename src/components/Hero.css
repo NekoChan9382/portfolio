@@ -1,12 +1,10 @@
-.hero {
-  display: flex;
-  padding-left: 100px;
-  padding-right: 100px;
-}
-
 .hero-content {
+  width: auto;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .hero-image {
