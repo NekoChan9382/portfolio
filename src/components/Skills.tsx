@@ -49,7 +49,7 @@ const Skills: React.FC = () => {
     return <SkillCard key={s.name} props={s} />;
   });
   return (
-    <section className="skills-section">
+    <section id="skills">
       <div className="section-content">
         <div className="section-title">
           <h2>Skills</h2>

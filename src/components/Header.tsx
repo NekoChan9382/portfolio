@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-scroll";
 import "./Header.css";
 
 const Header: React.FC = () => {
-  const buttonLabels: string[] = ["About", "Skills", "Projects"];
-  const navs = buttonLabels.map((label) => {
-    return (
-      <li key={label}>
-        <button className="nav-button">{label}</button>
-      </li>
-    );
+  const buttons: NavButtonContent[] = [
+    { label: "About", link: "about" },
+    { label: "Skills", link: "skills" },
+    { label: "Projects", link: "projects" },
+  ];
+  const navs = buttons.map((b) => {
+    return <NavButton key={b.label} content={b} />;
   });
 
   return (
@@ -23,6 +24,22 @@ const Header: React.FC = () => {
       </div>
     </header>
   );
+};
+
+const NavButton: React.FC<{ content: NavButtonContent }> = ({ content }) => {
+  const { label, link } = content;
+  return (
+    <li>
+      <Link to={link} smooth={true} duration={500} offset={-80}>
+        <button className="nav-button">{label}</button>
+      </Link>
+    </li>
+  );
+};
+
+type NavButtonContent = {
+  label: string;
+  link: string;
 };
 
 export default Header;

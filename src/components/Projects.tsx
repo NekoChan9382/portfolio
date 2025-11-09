@@ -37,7 +37,7 @@ const Projects: React.FC = () => {
     return <ProjectCard key={p.name} content={p} />;
   });
   return (
-    <section className="projects">
+    <section id="projects">
       <div className="section-content">
         <div className="section-title">
           <h2>Projects</h2>

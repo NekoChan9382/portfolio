@@ -3,7 +3,7 @@ import "./Hero.css";
 
 const Hero: React.FC = () => {
   return (
-    <section className="hero">
+    <section id="hero">
       <div className="section-content hero-content">
         <div className="hero-text">
           <span>
