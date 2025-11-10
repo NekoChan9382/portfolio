@@ -1,7 +1,3 @@
-.cards {
-  display: flex;
-}
-
 .project-card {
   display: flex;
   flex-direction: column;

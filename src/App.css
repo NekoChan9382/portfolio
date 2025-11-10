@@ -1,3 +1,12 @@
+.App {
+  width: auto;
+}
+
+.main {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
 .section-content {
   display: flex;
   flex-direction: column;
@@ -9,4 +18,11 @@
 
 .section-title {
   font-size: 30px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
