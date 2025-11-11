@@ -44,6 +44,21 @@ const Skills: React.FC = () => {
       name: "React",
       color: "#61DAFB",
     },
+    {
+      img: "./assets/stack-icons/elixir.png",
+      name: "Elixir",
+      color: "#4B275F",
+    },
+    {
+      img: "./assets/stack-icons/git.png",
+      name: "Git",
+      color: "#F05032",
+    },
+    {
+      img: "./assets/stack-icons/github.png",
+      name: "GitHub",
+      color: "#181717",
+    },
   ];
   const skillCards = skillList.map((s) => {
     return <SkillCard key={s.name} props={s} />;
