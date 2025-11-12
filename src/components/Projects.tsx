@@ -9,11 +9,11 @@ const Projects: React.FC = () => {
   });
   return (
     <section id="projects">
-      <div className="section-content">
+      <div className="section-contents">
         <div className="section-title">
           <h2>Projects</h2>
         </div>
-        <div className="cards">{projectCards}</div>
+        <div className="card">{projectCards}</div>
       </div>
     </section>
   );
@@ -39,11 +39,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
         <h3 className="project-name">{name}</h3>
         <p className="project-description">{description}</p>
         <div className="tech-list">{techSpan}</div>
-      </div>
-      <div className="project-link">
-        <a href={link} target="blank">
-          <span className="link-btn">Visit</span>
-        </a>
       </div>
     </div>
   );

@@ -9,11 +9,11 @@ const Skills: React.FC = () => {
   });
   return (
     <section id="skills">
-      <div className="section-content">
+      <div className="section-contents">
         <div className="section-title">
           <h2>Skills</h2>
         </div>
-        <div className="cards">{skillCards}</div>
+        <div className="card">{skillCards}</div>
       </div>
     </section>
   );

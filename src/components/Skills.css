@@ -1,3 +1,22 @@
+#skills {
+  height: 500px;
+  width: 600px;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
+.section-contents {
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 .skill-card {
   display: flex;
   flex-direction: column;
@@ -10,6 +29,7 @@
   overflow: hidden;
   height: 170px;
   width: 150px;
+  flex-shrink: 0;
 }
 
 .skill-img {
