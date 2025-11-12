@@ -1,39 +1,10 @@
 import React from "react";
+import { ProjectContent, projectList } from "./Contents";
 import "./Projects.css";
 
-type ProjectContent = {
-  name: string;
-  description: string;
-  link: string;
-  img: string;
-  techs: string[];
-};
-
 const Projects: React.FC = () => {
-  const projectList: ProjectContent[] = [
-    {
-      name: "NullTasker",
-      description: "チーム向け総合タスク管理システム",
-      link: "https://github.com/Team-Nullpo/NullTasker",
-      img: "./assets/NullTasker.png",
-      techs: ["HTML", "CSS", "JavaScript", "Node.js"],
-    },
-    {
-      name: "Train Info Board",
-      description: "APIを通じて列車案内板を表示するツール",
-      link: "https://colab.research.google.com/drive/1DtQIWg34rP2i_r0hwOCLPYTyFxwjilA7?usp=sharing",
-      img: "./null.png",
-      techs: ["Python", "Colab"],
-    },
-    {
-      name: "PR Issue Notifier",
-      description: "GitHubのPRに関連するIssueを通知するツール",
-      link: "https://github.com/NekoChan9382/pr-issue-notification",
-      img: "./null.png",
-      techs: ["Elixir", "GitHub"],
-    },
-  ];
-  const projectCards = projectList.map((p) => {
+  const projects = projectList;
+  const projectCards = projects.map((p) => {
     return <ProjectCard key={p.name} content={p} />;
   });
   return (

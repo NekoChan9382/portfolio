@@ -1,0 +1,90 @@
+export type SkillCardContent = {
+  img: string;
+  name: string;
+  color: string;
+};
+
+export const skillList: SkillCardContent[] = [
+  {
+    img: "./assets/stack-icons/cplusplus.png",
+    name: "C++",
+    color: "#00599C",
+  },
+  {
+    img: "./assets/stack-icons/python.png",
+    name: "Python",
+    color: "#3776AB",
+  },
+  {
+    img: "./assets/stack-icons/javascript.png",
+    name: "JavaScript",
+    color: "#F7DF1E",
+  },
+  {
+    img: "./assets/stack-icons/typescript.png",
+    name: "TypeScript",
+    color: "#3178C6",
+  },
+  {
+    img: "./assets/stack-icons/html5.png",
+    name: "HTML",
+    color: "#E34F26",
+  },
+  {
+    img: "./assets/stack-icons/css.png",
+    name: "CSS",
+    color: "#663399",
+  },
+  {
+    img: "./assets/stack-icons/react.png",
+    name: "React",
+    color: "#61DAFB",
+  },
+  {
+    img: "./assets/stack-icons/elixir.png",
+    name: "Elixir",
+    color: "#4B275F",
+  },
+  {
+    img: "./assets/stack-icons/git.png",
+    name: "Git",
+    color: "#F05032",
+  },
+  {
+    img: "./assets/stack-icons/github.png",
+    name: "GitHub",
+    color: "#181717",
+  },
+];
+
+export type ProjectContent = {
+  name: string;
+  description: string;
+  link: string;
+  img: string;
+  techs: string[];
+};
+
+export const projectList: ProjectContent[] = [
+  {
+    name: "NullTasker",
+    description: "チーム向け総合タスク管理システム",
+    link: "https://github.com/Team-Nullpo/NullTasker",
+    img: "./assets/NullTasker.png",
+    techs: ["HTML", "CSS", "JavaScript", "Node.js"],
+  },
+  {
+    name: "Train Info Board",
+    description: "APIを通じて列車案内板を表示するツール",
+    link: "https://colab.research.google.com/drive/1DtQIWg34rP2i_r0hwOCLPYTyFxwjilA7?usp=sharing",
+    img: "./null.png",
+    techs: ["Python", "Colab"],
+  },
+  {
+    name: "PR Issue Notifier",
+    description: "GitHubのPRに関連するIssueを通知するツール",
+    link: "https://github.com/NekoChan9382/pr-issue-notification",
+    img: "./null.png",
+    techs: ["Elixir", "GitHub"],
+  },
+];
