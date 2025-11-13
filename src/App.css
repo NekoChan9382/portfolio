@@ -3,26 +3,36 @@
 }
 
 .main {
+  padding-top: 80px;
   padding-left: 100px;
   padding-right: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.section {
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 30px;
+  height: min-content;
+  padding: 30px;
+}
+
+.about {
+  width: 900px;
 }
 
 .section-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 100%;
   width: 100%;
-  margin-top: 100px;
-  margin-bottom: 100px;
 }
 
 .section-title {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .cards {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
 }

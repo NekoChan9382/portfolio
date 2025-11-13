@@ -3,7 +3,10 @@ footer {
   align-items: center;
   justify-content: center;
   height: 80px;
-  border-top: 1px solid black;
+  border-top: var(--border-width) solid var(--border-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-content {

@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
@@ -12,10 +11,13 @@ function App() {
     <div className="App">
       <Header />
       <div className="main">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
+        <div className="section about">
+          <About />
+          <Projects />
+        </div>
+        <div className="section">
+          <Skills />
+        </div>
       </div>
       <Footer />
     </div>

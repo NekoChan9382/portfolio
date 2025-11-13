@@ -16,3 +16,8 @@ img {
   width: 100%;
   height: 100%;
 }
+
+:root {
+  --border-color: #ffc0ee;
+  --border-width: 2px;
+}
