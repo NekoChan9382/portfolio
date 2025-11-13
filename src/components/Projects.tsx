@@ -3,17 +3,16 @@ import { ProjectContent, projectList } from "./Contents";
 import "./Projects.css";
 
 const Projects: React.FC = () => {
-  const projects = projectList;
-  const projectCards = projects.map((p) => {
+  const projectCards = projectList.map((p) => {
     return <ProjectCard key={p.name} content={p} />;
   });
   return (
     <section id="projects">
-      <div className="section-contents">
+      <div className="section-content">
         <div className="section-title">
           <h2>Projects</h2>
         </div>
-        <div className="card">{projectCards}</div>
+        <div className="cards">{projectCards}</div>
       </div>
     </section>
   );

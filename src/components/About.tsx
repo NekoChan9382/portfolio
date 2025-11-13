@@ -4,7 +4,7 @@ import "./About.css";
 const About: React.FC = () => {
   return (
     <section id="about">
-      <div className="section-contents">
+      <div className="section-content">
         <div className="greeting">
           <div className="greeting-image">
             <img src="./assets/kanibaPigeon.jpg" alt="kanibaPigeon"></img>

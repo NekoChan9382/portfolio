@@ -3,17 +3,16 @@ import { SkillCardContent, skillList } from "./Contents";
 import "./Skills.css";
 
 const Skills: React.FC = () => {
-  const skills = skillList;
-  const skillCards = skills.map((s) => {
+  const skillCards = skillList.map((s) => {
     return <SkillCard key={s.name} props={s} />;
   });
   return (
     <section id="skills">
-      <div className="section-contents">
+      <div className="section-content">
         <div className="section-title">
           <h2>Skills</h2>
         </div>
-        <div className="card">{skillCards}</div>
+        <div className="cards">{skillCards}</div>
       </div>
     </section>
   );

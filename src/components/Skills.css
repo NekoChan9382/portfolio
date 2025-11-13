@@ -3,18 +3,6 @@
   width: 500px;
 }
 
-.section-contents {
-  height: 100%;
-  width: 100%;
-}
-
-.card {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
 .skill-card {
   display: flex;
   flex-direction: column;
