@@ -11,10 +11,14 @@
 }
 
 .section {
-  border: 1px solid black;
+  border: var(--border-width) solid var(--border-color);
   border-radius: 30px;
   height: min-content;
   padding: 30px;
+}
+
+.about {
+  width: 900px;
 }
 
 .section-content {
@@ -27,7 +31,7 @@
 }
 
 .section-title {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .cards {

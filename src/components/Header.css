@@ -6,7 +6,7 @@
 
 .header-container {
   display: flex;
-  border-bottom: 1px solid black;
+  border-bottom: var(--border-width) solid var(--border-color);
   background-color: white;
   align-items: center;
   height: 60px;

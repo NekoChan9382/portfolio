@@ -1,6 +1,6 @@
 #projects {
   height: 400px;
-  width: 600px;
+  width: 100%;
 }
 
 .section-contents {
@@ -22,8 +22,8 @@
   width: 350px;
   padding: 25px;
   margin: 25px;
-  border: 1px solid black;
-  border-radius: 50px;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 30px;
   flex-shrink: 0;
 }
 
