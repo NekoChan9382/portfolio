@@ -1,7 +1,16 @@
+export const SkillTypeList = {
+  Front: "Frontend",
+  Back: "Backend",
+  Dev: "Dev tools",
+} as const;
+
+export type SkillType = (typeof SkillTypeList)[keyof typeof SkillTypeList];
+
 export type SkillCardContent = {
   img: string;
   name: string;
   color: string;
+  type: SkillType;
 };
 
 export const skillList: SkillCardContent[] = [
@@ -9,51 +18,61 @@ export const skillList: SkillCardContent[] = [
     img: "./assets/stack-icons/cplusplus.png",
     name: "C++",
     color: "#00599C",
+    type: SkillTypeList.Back,
   },
   {
     img: "./assets/stack-icons/python.png",
     name: "Python",
     color: "#3776AB",
+    type: SkillTypeList.Back,
   },
   {
     img: "./assets/stack-icons/javascript.png",
     name: "JavaScript",
     color: "#F7DF1E",
+    type: SkillTypeList.Front,
   },
   {
     img: "./assets/stack-icons/typescript.png",
     name: "TypeScript",
     color: "#3178C6",
+    type: SkillTypeList.Front,
   },
   {
     img: "./assets/stack-icons/html5.png",
     name: "HTML",
     color: "#E34F26",
+    type: SkillTypeList.Front,
   },
   {
     img: "./assets/stack-icons/css.png",
     name: "CSS",
     color: "#663399",
+    type: SkillTypeList.Front,
   },
   {
     img: "./assets/stack-icons/react.png",
     name: "React",
     color: "#61DAFB",
+    type: SkillTypeList.Front,
   },
   {
     img: "./assets/stack-icons/elixir.png",
     name: "Elixir",
     color: "#4B275F",
+    type: SkillTypeList.Back,
   },
   {
     img: "./assets/stack-icons/git.png",
     name: "Git",
     color: "#F05032",
+    type: SkillTypeList.Dev,
   },
   {
     img: "./assets/stack-icons/github.png",
     name: "GitHub",
     color: "#181717",
+    type: SkillTypeList.Dev,
   },
 ];
 
