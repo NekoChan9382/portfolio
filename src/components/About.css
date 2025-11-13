@@ -8,3 +8,7 @@
   border-radius: 30px;
   overflow: hidden;
 }
+
+.greeting-text {
+  margin-left: 30px;
+}
