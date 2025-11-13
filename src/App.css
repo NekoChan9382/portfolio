@@ -3,8 +3,16 @@
 }
 
 .main {
+  padding-top: 80px;
   padding-left: 100px;
   padding-right: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.section {
+  border: 1px solid black;
+  border-radius: 30px;
 }
 
 .section-content {
