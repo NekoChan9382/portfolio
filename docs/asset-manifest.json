@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.83ea1f9d.css",
-    "main.js": "/static/js/main.b5b31ecb.js",
-    "static/js/453.6264690d.chunk.js": "/static/js/453.6264690d.chunk.js",
-    "index.html": "/index.html",
-    "main.83ea1f9d.css.map": "/static/css/main.83ea1f9d.css.map",
-    "main.b5b31ecb.js.map": "/static/js/main.b5b31ecb.js.map",
-    "453.6264690d.chunk.js.map": "/static/js/453.6264690d.chunk.js.map"
+    "main.css": "https://NekoChan9382.github.io/portfolio/static/css/main.83ea1f9d.css",
+    "main.js": "https://NekoChan9382.github.io/portfolio/static/js/main.e8346d55.js",
+    "static/js/453.6264690d.chunk.js": "https://NekoChan9382.github.io/portfolio/static/js/453.6264690d.chunk.js",
+    "index.html": "https://NekoChan9382.github.io/portfolio/index.html",
+    "main.83ea1f9d.css.map": "https://NekoChan9382.github.io/portfolio/static/css/main.83ea1f9d.css.map",
+    "main.e8346d55.js.map": "https://NekoChan9382.github.io/portfolio/static/js/main.e8346d55.js.map",
+    "453.6264690d.chunk.js.map": "https://NekoChan9382.github.io/portfolio/static/js/453.6264690d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.83ea1f9d.css",
-    "static/js/main.b5b31ecb.js"
+    "static/js/main.e8346d55.js"
   ]
 }
