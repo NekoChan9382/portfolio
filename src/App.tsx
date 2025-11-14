@@ -7,9 +7,8 @@ import SkillPage from "./pages/SkillPage";
 import ProjectPage from "./pages/ProjectPage";
 
 function App() {
-  console.log("PUBLIC_URL:", process.env.PUBLIC_URL);
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={process.env.DEPLOY ? "/portfolio" : "/"}>
       <Routes>
         <Route path="/" element={<TopPage />} />
         <Route path="/about" element={<AboutPage />} />
