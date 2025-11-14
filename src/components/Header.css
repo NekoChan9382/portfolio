@@ -45,6 +45,10 @@
   align-items: center;
 }
 
+.nav-links a {
+  text-decoration: none;
+}
+
 .nav-button {
   background: none;
   border: none;

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import "./Header.css";
 
 const Header: React.FC = () => {
   const buttons: NavButtonContent[] = [
-    { label: "About", link: "about" },
-    { label: "Skills", link: "skills" },
-    { label: "Projects", link: "projects" },
+    { label: "About", link: "/about" },
+    { label: "Skills", link: "/skills" },
+    { label: "Projects", link: "/projects" },
   ];
   const navs = buttons.map((b) => {
     return <NavButton key={b.label} content={b} />;
@@ -38,7 +38,7 @@ const NavButton: React.FC<{ content: NavButtonContent }> = ({ content }) => {
 
   return (
     <li>
-      <Link to={link} smooth={true} duration={500} offset={-80}>
+      <Link to={link}>
         <motion.button
           className="nav-button"
           onHoverStart={() => setIsHovered(true)}
