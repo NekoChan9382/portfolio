@@ -46,3 +46,7 @@ section:nth-child(n + 2) {
   overflow-x: auto;
   overflow-y: hidden;
 }
+
+a {
+  text-decoration: none;
+}
