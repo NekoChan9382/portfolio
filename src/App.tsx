@@ -7,6 +7,7 @@ import SkillPage from "./pages/SkillPage";
 import ProjectPage from "./pages/ProjectPage";
 
 function App() {
+  console.log("PUBLIC_URL:", process.env.PUBLIC_URL);
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
