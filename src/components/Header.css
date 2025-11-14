@@ -53,5 +53,14 @@
   padding: 10px 15px;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.nav-button-underline {
+  align-self: stretch;
+  height: 2px;
+  background-color: var(--border-color);
 }
