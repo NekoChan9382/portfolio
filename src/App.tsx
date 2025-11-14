@@ -8,7 +8,7 @@ import ProjectPage from "./pages/ProjectPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<TopPage />} />
         <Route path="/about" element={<AboutPage />} />
