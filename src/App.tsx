@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import TopPage from "./components/TopPage";
-import AboutPage from "./components/AboutPage";
-import SkillPage from "./components/SkillPage";
-import ProjectPage from "./components/ProjectPage";
+import TopPage from "./pages/TopPage";
+import AboutPage from "./pages/AboutPage";
+import SkillPage from "./pages/SkillPage";
+import ProjectPage from "./pages/ProjectPage";
 
 function App() {
   return (
