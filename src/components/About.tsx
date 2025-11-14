@@ -7,7 +7,10 @@ const About: React.FC = () => {
       <div className="section-content">
         <div className="greeting">
           <div className="greeting-image">
-            <img src="./assets/kanibaPigeon.jpg" alt="kanibaPigeon"></img>
+            <img
+              src={`${process.env.PUBLIC_URL}/assets/kanibaPigeon.jpg`}
+              alt="kanibaPigeon"
+            ></img>
           </div>
           <div className="greeting-text">
             <h3>Name: bit</h3>

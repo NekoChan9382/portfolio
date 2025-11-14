@@ -32,7 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
   return (
     <div className="project-card">
       <div className="project-image">
-        <img src={img} alt={`${name} logo`} />
+        <img src={`${process.env.PUBLIC_URL}${img}`} alt={`${name} logo`} />
       </div>
       <div className="project-detail">
         <h3 className="project-name">{name}</h3>

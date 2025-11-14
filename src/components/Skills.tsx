@@ -53,7 +53,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ props }) => {
   return (
     <div className="skill-card">
       <div className="skill-img" style={{ background: color }}>
-        <img src={img} alt={`${name} logo`} />
+        <img src={`${process.env.PUBLIC_URL}${img}`} alt={`${name} logo`} />
       </div>
     </div>
   );
