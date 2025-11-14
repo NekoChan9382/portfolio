@@ -45,14 +45,11 @@
   align-items: center;
 }
 
-.nav-links a {
-  text-decoration: none;
-}
-
 .nav-button {
   background: none;
   border: none;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 500;
   cursor: pointer;
   padding: 10px 15px;
   height: 100%;

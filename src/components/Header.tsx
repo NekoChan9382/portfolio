@@ -17,9 +17,15 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="header-container">
         <nav className="nav">
-          <div className="nav-icon">
-            <span>Portfolio</span>
-          </div>
+          <Link to="/">
+            <motion.div
+              className="nav-icon"
+              initial={{ scale: 1, color: "black" }}
+              whileHover={{ scale: 1.1, color: "var(--hover-color)" }}
+            >
+              <span>Portfolio</span>
+            </motion.div>
+          </Link>
           <ul className="nav-links">{navs}</ul>
         </nav>
       </div>
@@ -31,11 +37,6 @@ const NavButton: React.FC<{ content: NavButtonContent }> = ({ content }) => {
   const { label, link } = content;
   const [isHovered, setIsHovered] = useState(false);
 
-  // CSS変数を取得
-  const hoverColor = getComputedStyle(document.documentElement)
-    .getPropertyValue("--hover-color")
-    .trim();
-
   return (
     <li>
       <Link to={link}>
@@ -46,7 +47,7 @@ const NavButton: React.FC<{ content: NavButtonContent }> = ({ content }) => {
           transition={{ duration: 0.2 }}
         >
           <motion.span
-            animate={{ color: isHovered ? hoverColor : "#000000" }}
+            animate={{ color: isHovered ? "var(--hover-color)" : "#000000" }}
             transition={{ duration: 0.3 }}
           >
             {label}
