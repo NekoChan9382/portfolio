@@ -1,26 +1,15 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Footer from "./components/Footer";
+import Top from "./components/Top";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <div className="main">
-        <div className="section about">
-          <About />
-          <Projects />
-        </div>
-        <div className="section">
-          <Skills />
-        </div>
-      </div>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Top />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
