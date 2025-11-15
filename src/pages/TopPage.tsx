@@ -1,9 +1,9 @@
 import React from "react";
 import "./TopPage.css";
 import Header from "../components/Header";
-import About from "../components/About";
-import Skills from "../components/Skills";
-import Projects from "../components/Projects";
+import About from "../components/Top/About";
+import Skills from "../components/Top/Skills";
+import Projects from "../components/Top/Projects";
 import Footer from "../components/Footer";
 
 const TopPage: React.FC = () => {

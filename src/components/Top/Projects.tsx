@@ -1,5 +1,5 @@
 import React from "react";
-import { ProjectContent, projectList } from "./Contents";
+import { ProjectContent, projectList } from "../Contents";
 import "./Projects.css";
 
 const Projects: React.FC = () => {

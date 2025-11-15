@@ -4,7 +4,7 @@ import {
   skillList,
   SkillTypeList,
   SkillType,
-} from "./Contents";
+} from "../Contents";
 import "./Skills.css";
 
 type SkillSectionProps = { category: SkillType; skills: SkillCardContent[] };
