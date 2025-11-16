@@ -6,7 +6,11 @@
   padding-top: 80px;
   padding-left: 100px;
   padding-right: 100px;
+}
+
+.dashboard {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
