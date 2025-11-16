@@ -1,5 +1,5 @@
 #projects {
-  height: 400px;
+  height: min-content;
   width: 100%;
 }
 
