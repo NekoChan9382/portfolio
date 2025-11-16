@@ -107,3 +107,22 @@ export const projectList: ProjectContent[] = [
     techs: ["Elixir", "GitHub"],
   },
 ];
+
+export type CareerItemContent = {
+  time: string;
+  title: string;
+  description: string;
+};
+
+export const careerList: CareerItemContent[] = [
+  {
+    time: "2024.04",
+    title: "大阪公立大学工業高等専門学校 入学",
+    description: "",
+  },
+  {
+    time: "2024.05",
+    title: "ろぼっと倶楽部 入部",
+    description: "制御班としてロボットのプログラム作成に従事",
+  },
+];
