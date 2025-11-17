@@ -16,14 +16,14 @@ const Profile: React.FC = () => {
 
 const Greeting: React.FC = () => {
   return (
-    <div className="greeting">
-      <div className="greeting-image">
+    <div className="profile">
+      <div className="profile-image">
         <img
           src={`${process.env.PUBLIC_URL}/assets/kanibaPigeon.jpg`}
           alt="kanibaPigeon"
         ></img>
       </div>
-      <div className="greeting-text">
+      <div className="profile-detail">
         <h3>Name: bit</h3>
         <p>大阪公大高専2年生のbitです。組み込みやWeb開発を行っています。</p>
         <p>最近はWebデザインに興味があったりするかも</p>
