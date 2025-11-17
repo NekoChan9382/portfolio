@@ -107,3 +107,42 @@ export const projectList: ProjectContent[] = [
     techs: ["Elixir", "GitHub"],
   },
 ];
+
+export type CareerItemContent = {
+  date: string;
+  title: string;
+  description: string;
+};
+
+export const careerList: CareerItemContent[] = [
+  {
+    date: "2024.04",
+    title: "大阪公立大学工業高等専門学校 入学",
+    description: "",
+  },
+  {
+    date: "2024.05",
+    title: "ろぼっと倶楽部 入部",
+    description: "制御班としてロボットのプログラム作成に従事",
+  },
+  {
+    date: "2024.09",
+    title: "第14回キャチロボバトルコンテスト 出場",
+    description: "Aチーム操縦を担当 予選敗退TT",
+  },
+  {
+    date: "2025.03",
+    title: "関西春ロボコン2025 出場",
+    description: "Bチーム操縦を担当 予選敗退TT",
+  },
+  {
+    date: "2025.04",
+    title: "知能情報コース 配属",
+    description: "情報系の専門分野を重点的に学習するコースに配属",
+  },
+  {
+    date: "2025.09",
+    title: "高専ロボコン2025 出場",
+    description: "Bチーム操縦を担当 田中貴金属グループ賞受賞",
+  },
+];

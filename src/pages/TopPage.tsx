@@ -10,7 +10,7 @@ const TopPage: React.FC = () => {
   return (
     <div className="App">
       <Header />
-      <div className="main">
+      <div className="main dashboard">
         <div className="section about">
           <About />
           <Projects />
