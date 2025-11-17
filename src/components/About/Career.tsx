@@ -9,7 +9,9 @@ const Career: React.FC = () => {
   return (
     <section id="career">
       <div className="section-content">
-        <h2>Career</h2>
+        <div className="section-title">
+          <h2>Career</h2>
+        </div>
         <div className="careers">{careerItems}</div>
       </div>
     </section>
