@@ -4,7 +4,7 @@ import "./Career.css";
 
 const Career: React.FC = () => {
   const careerItems = careerList.map((item) => {
-    return <CareerItem key={item.title} content={item} />;
+    return <CareerItem key={`${item.date}-${item.title}`} content={item} />;
   });
   return (
     <section id="career">
