@@ -2,7 +2,7 @@ import React from "react";
 import "./ProjectPage.css";
 
 const ProjectPage: React.FC = () => {
-  return <> </>;
+  return <></>;
 };
 
 export default ProjectPage;
