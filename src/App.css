@@ -3,6 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-color);
 }
 
 .main {
@@ -23,6 +24,7 @@
   height: min-content;
   padding: 30px;
   margin: 20px;
+  background-color: var(--content-bg-color);
 }
 
 section:nth-child(n + 2) {

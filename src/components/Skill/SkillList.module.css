@@ -19,6 +19,10 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  height: 150px;
+  width: 150px;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 20px;
 }
 
 .skillImg {
@@ -26,8 +30,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  height: 70px;
-  width: 70px;
+  height: 40px;
+  width: 40px;
   padding: 15px;
 }
 
@@ -40,7 +44,7 @@
 
 .skillName {
   font-size: 18px;
-  margin-top: 8px;
+  margin-top: 20px;
   text-align: center;
   font-weight: 500;
 }

@@ -13,7 +13,16 @@ const SkillList: React.FC = () => {
       skills={group.skills}
     />
   ));
-  return <div>{Grids}</div>;
+  return (
+    <section id="skill-list">
+      <div className="section-content">
+        <div className="section-title">
+          <h2>Skills</h2>
+        </div>
+        {Grids}
+      </div>
+    </section>
+  );
 };
 
 type GridItemProps = {
@@ -37,6 +46,18 @@ const GridItem: React.FC<GridItemProps> = ({ category, skills }) => {
           />
         ))}
       </div>
+    </div>
+  );
+};
+
+const DetailCard: React.FC<{ skill: SkillCardContent }> = ({ skill }) => {
+  const { img, name, color } = skill;
+  return (
+    <div className={styles.detailCard}>
+      <div className={styles.detailImg} style={{ background: color }}>
+        <img src={`${process.env.PUBLIC_URL}${img}`} alt={`${name} logo`} />
+      </div>
+      <div className={styles.detailName}>{name}</div>
     </div>
   );
 };
