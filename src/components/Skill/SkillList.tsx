@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { SkillType, SkillCardContent } from "../Common/Contents";
 import { SkillGroups } from "../Common/SkillUtils";
+import { motion, AnimatePresence } from "motion/react";
 import SkillCard from "../Common/SkillCard";
 import styles from "./SkillList.module.css";
 
@@ -54,21 +55,39 @@ const GridItem: React.FC<GridItemProps> = ({
       <h2 className={styles.skillCategory}>{category}</h2>
       <div className={styles.cards}>
         {skills.map((skill) => (
-          <SkillCard
-            skill={skill}
-            showName={true}
-            className={`${styles.skillCard} ${
-              selectedSkill?.name === skill.name ? styles.selected : ""
-            }`}
-            imgClassName={styles.skillImg}
-            nameClassName={styles.skillName}
-            onClick={() => onSkillClick(skill)}
-          />
+          <motion.div
+            key={skill.name}
+            initial={{ y: 0 }}
+            whileHover={{ y: -10, color: "var(--hover-color)" }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+          >
+            <SkillCard
+              skill={skill}
+              showName={true}
+              className={`${styles.skillCard} ${
+                selectedSkill?.name === skill.name ? styles.selected : ""
+              }`}
+              imgClassName={styles.skillImg}
+              nameClassName={styles.skillName}
+              onClick={() => onSkillClick(skill)}
+            />
+          </motion.div>
         ))}
       </div>
-      {selectedSkill && selectedSkill.type === category && (
-        <DetailCard skill={selectedSkill} />
-      )}
+      <AnimatePresence mode="sync">
+        {selectedSkill && selectedSkill.type === category && (
+          <motion.div
+            key={selectedSkill.name}
+            initial={{ opacity: 0, height: 0, y: -20 }}
+            animate={{ opacity: 1, height: "auto", y: 0 }}
+            exit={{ opacity: 0, height: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            style={{ overflow: "hidden" }}
+          >
+            <DetailCard skill={selectedSkill} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

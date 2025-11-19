@@ -23,12 +23,7 @@
   width: 150px;
   border: var(--border-width) solid var(--border-color);
   border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-.skillCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .skillCard.selected {
