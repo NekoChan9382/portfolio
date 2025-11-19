@@ -66,7 +66,9 @@ const GridItem: React.FC<GridItemProps> = ({
           />
         ))}
       </div>
-      {selectedSkill && <DetailCard skill={selectedSkill} />}
+      {selectedSkill && selectedSkill.type === category && (
+        <DetailCard skill={selectedSkill} />
+      )}
     </div>
   );
 };
