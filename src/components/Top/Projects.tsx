@@ -21,7 +21,7 @@ const Projects: React.FC = () => {
 type ProjectCardProps = { content: ProjectContent };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
-  const { name, description, link, img, techs } = content;
+  const { name, description, img, techs } = content;
   const techSpan = techs.map((tech) => {
     return (
       <span className="tech-tag" key={tech}>
