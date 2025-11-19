@@ -1,5 +1,5 @@
 import React from "react";
-import { CareerItemContent, careerList } from "../Contents";
+import { CareerItemContent, careerList } from "../Common/Contents";
 import "./Career.css";
 
 const Career: React.FC = () => {

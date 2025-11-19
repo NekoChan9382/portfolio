@@ -11,6 +11,8 @@ export type SkillCardContent = {
   name: string;
   color: string;
   type: SkillType;
+  about: string;
+  description?: string;
 };
 
 export const skillList: SkillCardContent[] = [
@@ -19,60 +21,71 @@ export const skillList: SkillCardContent[] = [
     name: "C++",
     color: "#00599C",
     type: SkillTypeList.Back,
+    about: "主にロボット制御プログラムの作成に使用",
   },
   {
     img: "/assets/stack-icons/python.png",
     name: "Python",
     color: "#3776AB",
     type: SkillTypeList.Back,
+    about: "主にデータ解析や機械学習に使用",
   },
   {
     img: "/assets/stack-icons/javascript.png",
     name: "JavaScript",
     color: "#F7DF1E",
     type: SkillTypeList.Front,
+    about: "主にウェブ開発に使用",
+    description: "動的コンテンツの作成、サーバーサイド開発(Node.js)などで利用",
   },
   {
     img: "/assets/stack-icons/typescript.png",
     name: "TypeScript",
     color: "#3178C6",
     type: SkillTypeList.Front,
+    about: "主にウェブ開発に使用",
   },
   {
     img: "/assets/stack-icons/html5.png",
     name: "HTML",
     color: "#E34F26",
     type: SkillTypeList.Front,
+    about: "主にウェブ開発に使用",
   },
   {
     img: "/assets/stack-icons/css.png",
     name: "CSS",
     color: "#663399",
     type: SkillTypeList.Front,
+    about: "主にウェブ開発に使用",
   },
   {
     img: "/assets/stack-icons/react.png",
     name: "React",
     color: "#61DAFB",
     type: SkillTypeList.Front,
+    about: "主にウェブ開発に使用",
   },
   {
     img: "/assets/stack-icons/elixir.png",
     name: "Elixir",
     color: "#4B275F",
     type: SkillTypeList.Back,
+    about: "主にウェブ開発に使用",
   },
   {
     img: "/assets/stack-icons/git.png",
     name: "Git",
     color: "#F05032",
     type: SkillTypeList.Dev,
+    about: "主にバージョン管理に使用",
   },
   {
     img: "/assets/stack-icons/github.png",
     name: "GitHub",
     color: "#181717",
     type: SkillTypeList.Dev,
+    about: "主にバージョン管理に使用",
   },
 ];
 

@@ -1,0 +1,87 @@
+.gridItem:nth-child(n + 2) {
+  margin-top: 30px;
+}
+
+.skillCategory {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.skillCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 150px;
+  width: 150px;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.skillCard.selected {
+  border-color: var(--hover-color);
+  box-shadow: 0 0 0 3px rgba(255, 192, 238, 0.3);
+}
+
+.skillImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  height: 40px;
+  width: 40px;
+  padding: 15px;
+}
+
+.detailCard {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 20px;
+  padding-left: 15px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.detailTitle {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 15px;
+  gap: 20px;
+}
+
+.detailImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  height: 30px;
+  width: 30px;
+  padding: 10px;
+}
+
+.skillImg img,
+.detailImg img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  filter: invert(1);
+}
+
+.skillName {
+  font-size: 18px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 500;
+}

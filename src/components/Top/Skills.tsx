@@ -1,23 +1,17 @@
 import React from "react";
-import {
-  SkillCardContent,
-  skillList,
-  SkillTypeList,
-  SkillType,
-} from "../Contents";
+import { SkillCardContent, SkillType } from "../Common/Contents";
+import { SkillGroups } from "../Common/SkillUtils";
+import SkillCard from "../Common/SkillCard";
 import "./Skills.css";
 
-type SkillSectionProps = { category: SkillType; skills: SkillCardContent[] };
-
 const Skills: React.FC = () => {
-  const groupedSkills: SkillSectionProps[] = Object.values(SkillTypeList).map(
-    (category) => {
-      const skills = skillList.filter((skill) => skill.type === category);
-      return { category, skills };
-    }
-  );
+  const groupedSkills = SkillGroups;
   const skillCards = groupedSkills.map((group) => (
-    <SkillSection key={group.category} content={group} />
+    <SkillSection
+      key={group.category}
+      category={group.category}
+      skills={group.skills}
+    />
   ));
   return (
     <section id="skills">
@@ -31,29 +25,25 @@ const Skills: React.FC = () => {
   );
 };
 
-const SkillSection: React.FC<{ content: SkillSectionProps }> = ({
-  content,
-}) => {
-  const { category, skills } = content;
-  const skillCards = skills.map((s) => {
-    return <SkillCard key={s.name} props={s} />;
-  });
+type SkillSectionProps = {
+  category: SkillType;
+  skills: SkillCardContent[];
+};
+
+const SkillSection: React.FC<SkillSectionProps> = ({ category, skills }) => {
   return (
     <div className="skill-field">
       <h2 className="skill-category">{category}</h2>
-      <div className="cards">{skillCards}</div>
-    </div>
-  );
-};
-
-type SkillCardProps = { props: SkillCardContent };
-
-const SkillCard: React.FC<SkillCardProps> = ({ props }) => {
-  const { img, name, color } = props;
-  return (
-    <div className="skill-card">
-      <div className="skill-img" style={{ background: color }}>
-        <img src={`${process.env.PUBLIC_URL}${img}`} alt={`${name} logo`} />
+      <div className="cards">
+        {skills.map((skill) => (
+          <SkillCard
+            key={skill.name}
+            skill={skill}
+            showName={false}
+            className="skill-card"
+            imgClassName="skill-img"
+          />
+        ))}
       </div>
     </div>
   );

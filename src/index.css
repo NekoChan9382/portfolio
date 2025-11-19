@@ -22,4 +22,6 @@ img {
   --border-width: 2px;
   --hover-color: #f76cd1;
   --border-sub-color: #d2a1ff;
+  --bg-color: #fdfdfd;
+  --content-bg-color: #ffffff;
 }
