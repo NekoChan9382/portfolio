@@ -1,50 +1,43 @@
 import React from "react";
-import {
-  SkillCardContent,
-  skillList,
-  SkillTypeList,
-  SkillType,
-} from "../Contents";
-import { Card } from "@mui/material";
-import "./SkillList.css";
-
-type GridProps = { category: SkillType; skills: SkillCardContent[] };
+import { SkillType, SkillCardContent } from "../Common/Contents";
+import { SkillGroups } from "../Common/SkillUtils";
+import SkillCard from "../Common/SkillCard";
+import styles from "./SkillList.module.css";
 
 const SkillList: React.FC = () => {
-  const groupedSkills: GridProps[] = Object.values(SkillTypeList).map(
-    (category) => {
-      const skills = skillList.filter((skill) => skill.type === category);
-      return { category, skills };
-    }
-  );
+  const groupedSkills = SkillGroups;
   const Grids = groupedSkills.map((group) => (
-    <GridItem key={group.category} content={group} />
+    <GridItem
+      key={group.category}
+      category={group.category}
+      skills={group.skills}
+    />
   ));
   return <div>{Grids}</div>;
 };
 
-const GridItem: React.FC<{ content: GridProps }> = ({ content }) => {
-  const { category, skills } = content;
+type GridItemProps = {
+  category: SkillType;
+  skills: SkillCardContent[];
+};
+
+const GridItem: React.FC<GridItemProps> = ({ category, skills }) => {
   return (
-    <div className="grid-item">
-      <h2 className="skill-category">{category}</h2>
-      <div className="cards">
-        {skills.map((s) => (
-          <SkillCard key={s.name} props={s} />
+    <div className={styles.gridItem}>
+      <h2 className={styles.skillCategory}>{category}</h2>
+      <div className={styles.cards}>
+        {skills.map((skill) => (
+          <SkillCard
+            key={skill.name}
+            skill={skill}
+            showName={true}
+            className={styles.skillCard}
+            imgClassName={styles.skillImg}
+            nameClassName={styles.skillName}
+          />
         ))}
       </div>
     </div>
-  );
-};
-
-const SkillCard: React.FC<{ props: SkillCardContent }> = ({ props }) => {
-  const { img, name, color } = props;
-  return (
-    <Card className="skill-card">
-      <div className="skill-img" style={{ background: color }}>
-        <img src={`${process.env.PUBLIC_URL}${img}`} alt={`${name} logo`} />
-      </div>
-    </Card>
   );
 };
 

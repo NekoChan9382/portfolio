@@ -1,0 +1,46 @@
+.gridItem:nth-child(n + 2) {
+  margin-top: 30px;
+}
+
+.skillCategory {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.skillCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.skillImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  height: 70px;
+  width: 70px;
+  padding: 15px;
+}
+
+.skillImg img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  filter: invert(1);
+}
+
+.skillName {
+  font-size: 18px;
+  margin-top: 8px;
+  text-align: center;
+  font-weight: 500;
+}
