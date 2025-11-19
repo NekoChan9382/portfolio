@@ -7,6 +7,7 @@ type SkillCardProps = {
   className?: string;
   imgClassName?: string;
   nameClassName?: string;
+  onClick?: () => void;
 };
 
 const SkillCard: React.FC<SkillCardProps> = ({
@@ -15,11 +16,12 @@ const SkillCard: React.FC<SkillCardProps> = ({
   className = "",
   imgClassName = "",
   nameClassName = "",
+  onClick,
 }) => {
   const { img, name, color } = skill;
 
   return (
-    <div className={className}>
+    <div className={className} onClick={onClick}>
       <div className={imgClassName} style={{ background: color }}>
         <img src={`${process.env.PUBLIC_URL}${img}`} alt={`${name} logo`} />
       </div>

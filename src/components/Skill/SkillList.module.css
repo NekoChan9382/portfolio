@@ -23,6 +23,17 @@
   width: 150px;
   border: var(--border-width) solid var(--border-color);
   border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.skillCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.skillCard.selected {
+  border-color: var(--hover-color);
+  box-shadow: 0 0 0 3px rgba(255, 192, 238, 0.3);
 }
 
 .skillImg {
@@ -35,7 +46,38 @@
   padding: 15px;
 }
 
-.skillImg img {
+.detailCard {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 20px;
+  padding-left: 15px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.detailTitle {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 15px;
+  gap: 20px;
+}
+
+.detailImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  height: 30px;
+  width: 30px;
+  padding: 10px;
+}
+
+.skillImg img,
+.detailImg img {
   height: 100%;
   width: 100%;
   object-fit: contain;
