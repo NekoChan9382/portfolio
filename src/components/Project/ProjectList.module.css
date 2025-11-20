@@ -2,6 +2,12 @@
   display: flex;
 }
 
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .projectImages {
   display: flex;
   flex-direction: column;
@@ -38,6 +44,25 @@
   overflow: hidden;
 }
 
-.projectImage:hover {
-  border-color: #007bff;
+.projectImage.selected {
+  border-color: var(--border-sub-color);
+}
+
+.techListTitle {
+  margin: 0;
+}
+
+.techTags {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.techTag {
+  background-color: var(--hover-color);
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
 }
