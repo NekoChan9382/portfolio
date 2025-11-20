@@ -103,6 +103,8 @@ export const projectList: ProjectContent[] = [
   {
     name: "NullTasker",
     about: "チーム向け総合タスク管理システム",
+    description:
+      "チームのタスク管理を効率化することを目的とした、オープンソースのタスク管理ツールです。 メンバー間でタスクの割り当てや進捗状況の共有が簡単に行えます。",
     link: "https://github.com/Team-Nullpo/NullTasker",
     thumbnail: "/assets/NullTasker.png",
     imgs: [

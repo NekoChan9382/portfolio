@@ -37,16 +37,13 @@ const ProjectCard: React.FC<{ content: ProjectContent }> = ({ content }) => {
             ))}
           </div>
         </div>
-        {link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.projectLink}
-          >
-            View Project
-          </a>
-        )}
+        <div className={styles.projectLink}>
+          {link && (
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              View Project
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
