@@ -119,6 +119,11 @@ export const projectList: ProjectContent[] = [
     about: "APIを通じて列車案内板を表示するツール",
     link: "https://colab.research.google.com/drive/1DtQIWg34rP2i_r0hwOCLPYTyFxwjilA7?usp=sharing",
     thumbnail: "/null.png",
+    imgs: [
+      "/assets/project-screenshots/train-1.png",
+      "/assets/project-screenshots/train-2.png",
+      "/assets/project-screenshots/train-3.png",
+    ],
     techs: ["Python", "Colab"],
   },
   {
@@ -126,6 +131,7 @@ export const projectList: ProjectContent[] = [
     about: "GitHubのPRに関連するIssueを通知するツール",
     link: "https://github.com/NekoChan9382/pr-issue-notification",
     thumbnail: "/null.png",
+    imgs: ["/assets/project-screenshots/pr-1.png"],
     techs: ["Elixir", "GitHub"],
   },
 ];
