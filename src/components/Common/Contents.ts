@@ -91,32 +91,39 @@ export const skillList: SkillCardContent[] = [
 
 export type ProjectContent = {
   name: string;
-  description: string;
+  about: string;
+  description?: string;
   link: string;
-  img: string;
+  thumbnail: string;
+  imgs?: string[];
   techs: string[];
 };
 
 export const projectList: ProjectContent[] = [
   {
     name: "NullTasker",
-    description: "チーム向け総合タスク管理システム",
+    about: "チーム向け総合タスク管理システム",
     link: "https://github.com/Team-Nullpo/NullTasker",
-    img: "/assets/NullTasker.png",
+    thumbnail: "/assets/NullTasker.png",
+    imgs: [
+      "/assets/project-screenshots/nulltasker-login.png",
+      "/assets/project-screenshots/nulltasker-task.png",
+      "/assets/project-screenshots/nulltasker-calendar.png",
+    ],
     techs: ["HTML", "CSS", "JavaScript", "Node.js"],
   },
   {
     name: "Train Info Board",
-    description: "APIを通じて列車案内板を表示するツール",
+    about: "APIを通じて列車案内板を表示するツール",
     link: "https://colab.research.google.com/drive/1DtQIWg34rP2i_r0hwOCLPYTyFxwjilA7?usp=sharing",
-    img: "/null.png",
+    thumbnail: "/null.png",
     techs: ["Python", "Colab"],
   },
   {
     name: "PR Issue Notifier",
-    description: "GitHubのPRに関連するIssueを通知するツール",
+    about: "GitHubのPRに関連するIssueを通知するツール",
     link: "https://github.com/NekoChan9382/pr-issue-notification",
-    img: "/null.png",
+    thumbnail: "/null.png",
     techs: ["Elixir", "GitHub"],
   },
 ];

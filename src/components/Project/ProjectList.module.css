@@ -1,3 +1,43 @@
 .projectCard {
   display: flex;
 }
+
+.projectImages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  padding: 20px;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 20px;
+  height: min-content;
+  background-color: var(--content-bg-color);
+}
+
+.mainImage {
+  width: 500px;
+  height: auto;
+  margin-bottom: 10px;
+  aspect-ratio: 16 / 10;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.thumbnailContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.projectImage {
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+  border: 2px solid transparent;
+  aspect-ratio: 16 / 10;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.projectImage:hover {
+  border-color: #007bff;
+}

@@ -21,7 +21,7 @@ const Projects: React.FC = () => {
 type ProjectCardProps = { content: ProjectContent };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
-  const { name, description, img, techs } = content;
+  const { name, about, thumbnail, techs } = content;
   const techSpan = techs.map((tech) => {
     return (
       <span className="tech-tag" key={tech}>
@@ -32,11 +32,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
   return (
     <div className="project-card">
       <div className="project-image">
-        <img src={`${process.env.PUBLIC_URL}${img}`} alt={`${name} logo`} />
+        <img
+          src={`${process.env.PUBLIC_URL}${thumbnail}`}
+          alt={`${name} logo`}
+        />
       </div>
       <div className="project-detail">
         <h3 className="project-name">{name}</h3>
-        <p className="project-description">{description}</p>
+        <p className="project-description">{about}</p>
         <div className="tech-list">{techSpan}</div>
       </div>
     </div>
