@@ -117,8 +117,10 @@ export const projectList: ProjectContent[] = [
   {
     name: "Train Info Board",
     about: "APIを通じて列車案内板を表示するツール",
+    description:
+      "PythonとGoogle Colabを使用して、鉄道の運行情報を取得し、列車案内板形式で表示するツールです。京急品川駅の時刻表を表示しています。APIから提供されているデータを使用することで、リアルタイムの運行情報を反映しています。また、UI作成にGradioを利用しており、視覚的にわかりやすいインターフェースを提供しています。",
     link: "https://colab.research.google.com/drive/1DtQIWg34rP2i_r0hwOCLPYTyFxwjilA7?usp=sharing",
-    thumbnail: "/null.png",
+    thumbnail: "/assets/train-info-board.png",
     imgs: [
       "/assets/project-screenshots/train-1.png",
       "/assets/project-screenshots/train-2.png",
@@ -129,8 +131,10 @@ export const projectList: ProjectContent[] = [
   {
     name: "PR Issue Notifier",
     about: "GitHubのPRに関連するIssueを通知するツール",
+    description:
+      "自身にアサインされたIssueやレビュー依頼されたPull Requestを通知するツールです。GitHub GraphQL APIを使用して、関連するIssueやPRの情報を取得し、通知を行います。今後に向けた練習のため、Elixirで実装を行いました。また、GitHub Actionsを使用して定期的に実行されるように設定しています。NullTaskerの開発時にレビューを投げても気づかれないことが多かったことをきっかけに、開発効率化の一環として作成しました。",
     link: "https://github.com/NekoChan9382/pr-issue-notification",
-    thumbnail: "/null.png",
+    thumbnail: "/assets/pr-issue-notifier.png",
     imgs: ["/assets/project-screenshots/pr-1.png"],
     techs: ["Elixir", "GitHub"],
   },
