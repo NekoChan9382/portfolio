@@ -1,16 +1,12 @@
 import React from "react";
+import Section from "../Common/Section";
 import "./Profile.css";
 
 const Profile: React.FC = () => {
   return (
-    <section id="profile">
-      <div className="section-content">
-        <div className="section-title">
-          <h2>Profile</h2>
-        </div>
-        <Greeting />
-      </div>
-    </section>
+    <Section id="profile" title="Profile">
+      <Greeting />
+    </Section>
   );
 };
 
