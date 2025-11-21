@@ -54,22 +54,27 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
   return (
     <div className={styles.projectImages}>
       <div className={styles.mainImage}>
-        <img
-          src={`${process.env.PUBLIC_URL}${imgs[selectedImgIndex]}`}
-          alt="Project main"
-        />
+        {imgs.length > 0 && (
+          <img
+            src={`${process.env.PUBLIC_URL}${imgs[selectedImgIndex]}`}
+            alt="Project main"
+          />
+        )}
       </div>
       <div className={styles.thumbnailContainer}>
         {imgs.map((img, index) => (
-          <img
+          <button
             key={index}
-            src={`${process.env.PUBLIC_URL}${img}`}
-            alt={`Project screenshot ${index + 1}`}
             className={`${styles.projectImage} ${
               selectedImgIndex === index ? styles.selected : ""
             }`}
             onClick={() => setSelectedImgIndex(index)}
-          />
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}${img}`}
+              alt={`Project screenshot ${index + 1}`}
+            />
+          </button>
         ))}
       </div>
     </div>
