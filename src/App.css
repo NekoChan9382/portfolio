@@ -62,4 +62,5 @@ section:last-child {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
