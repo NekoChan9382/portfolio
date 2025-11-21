@@ -1,5 +1,6 @@
 import React from "react";
 import { CareerItemContent, careerList } from "../Common/Contents";
+import Section from "../Common/Section";
 import "./Career.css";
 
 const Career: React.FC = () => {
@@ -7,14 +8,9 @@ const Career: React.FC = () => {
     return <CareerItem key={`${item.date}-${item.title}`} content={item} />;
   });
   return (
-    <section id="career">
-      <div className="section-content">
-        <div className="section-title">
-          <h2>Career</h2>
-        </div>
-        <div className="careers">{careerItems}</div>
-      </div>
-    </section>
+    <Section id="career" title="Career">
+      <div className="careers">{careerItems}</div>
+    </Section>
   );
 };
 

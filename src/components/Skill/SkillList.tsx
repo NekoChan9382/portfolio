@@ -3,6 +3,7 @@ import { SkillType, SkillCardContent } from "../Common/Contents";
 import { SkillGroups } from "../Common/SkillUtils";
 import { motion, AnimatePresence } from "motion/react";
 import SkillCard from "../Common/SkillCard";
+import Section from "../Common/Section";
 import styles from "./SkillList.module.css";
 
 const SkillList: React.FC = () => {
@@ -26,14 +27,9 @@ const SkillList: React.FC = () => {
   ));
 
   return (
-    <section id="skill-list">
-      <div className="section-content">
-        <div className="section-title">
-          <h2>Skills</h2>
-        </div>
-        {Grids}
-      </div>
-    </section>
+    <Section id="skill-list" title="Skills">
+      {Grids}
+    </Section>
   );
 };
 

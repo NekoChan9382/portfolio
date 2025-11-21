@@ -1,5 +1,6 @@
 import React from "react";
 import { ProjectContent, projectList } from "../Common/Contents";
+import Section from "../Common/Section";
 import "./Projects.css";
 
 const Projects: React.FC = () => {
@@ -7,14 +8,9 @@ const Projects: React.FC = () => {
     return <ProjectCard key={p.name} content={p} />;
   });
   return (
-    <section id="projects">
-      <div className="section-content">
-        <div className="section-title">
-          <h2>Projects</h2>
-        </div>
-        <div className="cards">{projectCards}</div>
-      </div>
-    </section>
+    <Section id="projects" title="Projects">
+      <div className="cards">{projectCards}</div>
+    </Section>
   );
 };
 
