@@ -2,10 +2,12 @@ import React from "react";
 import Section from "../Common/Section";
 import "./About.css";
 import { Link } from "react-router-dom";
-import { borderColor, hoverColor } from "../Common/Contents";
+import { getBorderColor, getHoverColor } from "../Common/Contents";
 import { motion } from "motion/react";
 
 const About: React.FC = () => {
+  const borderColor = getBorderColor();
+  const hoverColor = getHoverColor();
   return (
     <Section id="about">
       <div className="greeting">

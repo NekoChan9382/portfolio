@@ -6,9 +6,11 @@ import Skills from "../components/Top/Skills";
 import Projects from "../components/Top/Projects";
 import { Popper } from "@mui/material";
 import { Link } from "react-router-dom";
-import { borderColor, hoverColor } from "../components/Common/Contents";
+import { getBorderColor, getHoverColor } from "../components/Common/Contents";
 
 const TopPage: React.FC = () => {
+  const borderColor = getBorderColor();
+  const hoverColor = getHoverColor();
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
   const skillSectionRef = React.useRef<HTMLDivElement>(null);
 

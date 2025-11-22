@@ -2,12 +2,14 @@ import React from "react";
 import { motion } from "motion/react";
 import { ProjectContent, projectList } from "../Common/Contents";
 import Section from "../Common/Section";
-import { borderColor, hoverColor } from "../Common/Contents";
+import { getBorderColor, getHoverColor } from "../Common/Contents";
 import { Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./Projects.css";
 
 const Projects: React.FC = () => {
+  const borderColor = getBorderColor();
+  const hoverColor = getHoverColor();
   const projectCards = projectList.map((p) => {
     return <ProjectCard key={p.name} content={p} />;
   });
@@ -21,6 +23,8 @@ const Projects: React.FC = () => {
 type ProjectCardProps = { content: ProjectContent };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
+  const borderColor = getBorderColor();
+  const hoverColor = getHoverColor();
   const { id, name, about, thumbnail, techs } = content;
   const techSpan = techs.map((tech) => {
     return (

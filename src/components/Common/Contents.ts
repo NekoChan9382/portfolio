@@ -183,9 +183,11 @@ export const careerList: CareerItemContent[] = [
   },
 ];
 
-export const borderColor = getComputedStyle(document.documentElement)
-  .getPropertyValue("--border-color")
-  .trim();
-export const hoverColor = getComputedStyle(document.documentElement)
-  .getPropertyValue("--hover-color")
-  .trim();
+export const getCSSVariable = (variableName: string): string => {
+  return getComputedStyle(document.documentElement)
+    .getPropertyValue(variableName)
+    .trim();
+};
+
+export const getBorderColor = () => getCSSVariable("--border-color");
+export const getHoverColor = () => getCSSVariable("--hover-color");
