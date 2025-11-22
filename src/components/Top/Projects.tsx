@@ -1,6 +1,9 @@
 import React from "react";
+import { motion } from "motion/react";
 import { ProjectContent, projectList } from "../Common/Contents";
 import Section from "../Common/Section";
+import { borderColor, hoverColor } from "../Common/Contents";
+import { Tooltip } from "@mui/material";
 import "./Projects.css";
 
 const Projects: React.FC = () => {
@@ -26,19 +29,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
     );
   });
   return (
-    <div className="project-card">
-      <div className="project-image">
-        <img
-          src={`${process.env.PUBLIC_URL}${thumbnail}`}
-          alt={`${name} logo`}
-        />
-      </div>
-      <div className="project-detail">
-        <h3 className="project-name">{name}</h3>
-        <p className="project-description">{about}</p>
-        <div className="tech-list">{techSpan}</div>
-      </div>
-    </div>
+    <Tooltip title="Click to view project" arrow>
+      <motion.div
+        className="project-card"
+        initial={{
+          borderColor: borderColor,
+        }}
+        whileHover={{
+          borderColor: hoverColor,
+          boxShadow: `0 0 20px ${hoverColor}40`,
+        }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
+        <div className="project-image">
+          <img
+            src={`${process.env.PUBLIC_URL}${thumbnail}`}
+            alt={`${name} logo`}
+          />
+        </div>
+        <div className="project-detail">
+          <h3 className="project-name">{name}</h3>
+          <p className="project-description">{about}</p>
+          <div className="tech-list">{techSpan}</div>
+        </div>
+      </motion.div>
+    </Tooltip>
   );
 };
 

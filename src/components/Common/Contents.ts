@@ -178,3 +178,10 @@ export const careerList: CareerItemContent[] = [
     description: "Bチーム操縦を担当 田中貴金属グループ賞受賞",
   },
 ];
+
+export const borderColor = getComputedStyle(document.documentElement)
+  .getPropertyValue("--border-color")
+  .trim();
+export const hoverColor = getComputedStyle(document.documentElement)
+  .getPropertyValue("--hover-color")
+  .trim();
