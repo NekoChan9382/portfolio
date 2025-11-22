@@ -22,6 +22,7 @@ const About: React.FC = () => {
           <Link to="/about">
             <motion.div
               className="about-link-btn"
+              role="button"
               initial={{
                 borderColor: borderColor,
               }}
