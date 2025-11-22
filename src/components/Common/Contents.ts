@@ -90,6 +90,7 @@ export const skillList: SkillCardContent[] = [
 ];
 
 export type ProjectContent = {
+  id: string;
   name: string;
   about: string;
   description?: string;
@@ -101,6 +102,7 @@ export type ProjectContent = {
 
 export const projectList: ProjectContent[] = [
   {
+    id: "nulltasker",
     name: "NullTasker",
     about: "チーム向け総合タスク管理システム",
     description:
@@ -115,6 +117,7 @@ export const projectList: ProjectContent[] = [
     techs: ["HTML", "CSS", "JavaScript", "Node.js"],
   },
   {
+    id: "train-info-board",
     name: "Train Info Board",
     about: "APIを通じて列車案内板を表示するツール",
     description:
@@ -129,6 +132,7 @@ export const projectList: ProjectContent[] = [
     techs: ["Python", "Colab"],
   },
   {
+    id: "pr-issue-notifier",
     name: "PR Issue Notifier",
     about: "GitHubのPRに関連するIssueを通知するツール",
     description:

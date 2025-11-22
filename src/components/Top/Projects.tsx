@@ -4,6 +4,7 @@ import { ProjectContent, projectList } from "../Common/Contents";
 import Section from "../Common/Section";
 import { borderColor, hoverColor } from "../Common/Contents";
 import { Tooltip } from "@mui/material";
+import { Link } from "react-router-dom";
 import "./Projects.css";
 
 const Projects: React.FC = () => {
@@ -20,7 +21,7 @@ const Projects: React.FC = () => {
 type ProjectCardProps = { content: ProjectContent };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
-  const { name, about, thumbnail, techs } = content;
+  const { id, name, about, thumbnail, techs } = content;
   const techSpan = techs.map((tech) => {
     return (
       <span className="tech-tag" key={tech}>
@@ -30,29 +31,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
   });
   return (
     <Tooltip title="Click to view project" arrow>
-      <motion.div
-        className="project-card"
-        initial={{
-          borderColor: borderColor,
-        }}
-        whileHover={{
-          borderColor: hoverColor,
-          boxShadow: `0 0 20px ${hoverColor}40`,
-        }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
-      >
-        <div className="project-image">
-          <img
-            src={`${process.env.PUBLIC_URL}${thumbnail}`}
-            alt={`${name} logo`}
-          />
-        </div>
-        <div className="project-detail">
-          <h3 className="project-name">{name}</h3>
-          <p className="project-description">{about}</p>
-          <div className="tech-list">{techSpan}</div>
-        </div>
-      </motion.div>
+      <Link to={`/projects#${id}`}>
+        <motion.div
+          className="project-card"
+          initial={{
+            borderColor: borderColor,
+          }}
+          whileHover={{
+            borderColor: hoverColor,
+            boxShadow: `0 0 20px ${hoverColor}40`,
+          }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        >
+          <div className="project-image">
+            <img
+              src={`${process.env.PUBLIC_URL}${thumbnail}`}
+              alt={`${name} logo`}
+            />
+          </div>
+          <div className="project-detail">
+            <h3 className="project-name">{name}</h3>
+            <p className="project-description">{about}</p>
+            <div className="tech-list">{techSpan}</div>
+          </div>
+        </motion.div>
+      </Link>
     </Tooltip>
   );
 };
