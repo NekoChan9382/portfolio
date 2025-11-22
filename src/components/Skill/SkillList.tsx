@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SkillType, SkillCardContent } from "../Common/Contents";
+import { SkillType, SkillCardContent, getHoverColor } from "../Common/Contents";
 import { SkillGroups } from "../Common/SkillUtils";
 import { motion, AnimatePresence } from "motion/react";
 import SkillCard from "../Common/SkillCard";
@@ -54,7 +54,7 @@ const GridItem: React.FC<GridItemProps> = ({
           <motion.div
             key={skill.name}
             initial={{ y: 0 }}
-            whileHover={{ y: -10, color: "var(--hover-color)" }}
+            whileHover={{ y: -10, color: getHoverColor() }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
           >
             <SkillCard
