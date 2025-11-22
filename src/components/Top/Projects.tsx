@@ -30,8 +30,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
     );
   });
   return (
-    <Tooltip title="Click to view project" arrow>
-      <Link to={`/projects#${id}`}>
+    <Link to={`/projects#${id}`}>
+      <Tooltip title="Click to view project" arrow>
         <motion.div
           className="project-card"
           initial={{
@@ -55,8 +55,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
             <div className="tech-list">{techSpan}</div>
           </div>
         </motion.div>
-      </Link>
-    </Tooltip>
+      </Tooltip>
+    </Link>
   );
 };
 

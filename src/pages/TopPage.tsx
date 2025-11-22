@@ -28,24 +28,24 @@ const TopPage: React.FC = () => {
         <About />
         <Projects />
       </div>
-      <motion.div
-        ref={skillSectionRef}
-        className="section"
-        initial={{
-          borderColor: borderColor,
-        }}
-        whileHover={{
-          borderColor: hoverColor,
-          boxShadow: `0 0 20px ${hoverColor}40`,
-        }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <Link to="/skills">
+      <Link to="/skills">
+        <motion.div
+          ref={skillSectionRef}
+          className="section"
+          initial={{
+            borderColor: borderColor,
+          }}
+          whileHover={{
+            borderColor: hoverColor,
+            boxShadow: `0 0 20px ${hoverColor}40`,
+          }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <Skills />
-        </Link>
-      </motion.div>
+        </motion.div>
+      </Link>
       <AnimatePresence>
         {open && (
           <Popper
