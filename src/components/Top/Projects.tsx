@@ -8,8 +8,6 @@ import { Link } from "react-router-dom";
 import "./Projects.css";
 
 const Projects: React.FC = () => {
-  const borderColor = getBorderColor();
-  const hoverColor = getHoverColor();
   const projectCards = projectList.map((p) => {
     return <ProjectCard key={p.name} content={p} />;
   });
