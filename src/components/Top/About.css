@@ -12,3 +12,14 @@
 .greeting-text {
   margin-left: 30px;
 }
+
+.about-link-btn {
+  border: var(--border-width) solid;
+  margin-top: 20px;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 10px;
+  background-color: var(--hover-color);
+  color: white;
+  font-weight: 500;
+}

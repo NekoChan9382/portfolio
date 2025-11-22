@@ -15,9 +15,9 @@ const ProjectList: React.FC = () => {
 };
 
 const ProjectCard: React.FC<{ content: ProjectContent }> = ({ content }) => {
-  const { name, about, description, link, imgs, techs } = content;
+  const { id, name, about, description, link, imgs, techs } = content;
   return (
-    <div className={styles.projectCard}>
+    <div className={styles.projectCard} id={id}>
       <Images imgs={imgs || []} />
       <div className={styles.projectDescription}>
         <h2>{name}</h2>

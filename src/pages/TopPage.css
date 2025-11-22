@@ -1,0 +1,22 @@
+.skill-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-hover-card {
+  position: relative;
+  background-color: white;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 20px;
+  padding: 20px 25px;
+  margin-top: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.skill-hover-card p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
