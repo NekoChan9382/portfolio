@@ -30,7 +30,7 @@ const TopPage: React.FC = () => {
         <About />
         <Projects />
       </div>
-      <Link to="/skills">
+      <Link to="/skills" className="dashboard-link">
         <motion.div
           ref={skillSectionRef}
           className="section"

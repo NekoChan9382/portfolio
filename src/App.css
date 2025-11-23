@@ -65,9 +65,12 @@ section:last-child {
 a {
   text-decoration: none;
   color: inherit;
-  height: 100%;
-  width: 100%;
   display: inline-block;
+}
+
+.dashboard-link {
+  height: min-content;
+  width: auto;
 }
 
 /* 段階的なpadding調整 */
