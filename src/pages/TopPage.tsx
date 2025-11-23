@@ -26,7 +26,7 @@ const TopPage: React.FC = () => {
 
   return (
     <div className="dashboard">
-      <div className="section about">
+      <div className="section" id="section-about">
         <About />
         <Projects />
       </div>
@@ -34,6 +34,7 @@ const TopPage: React.FC = () => {
         <motion.div
           ref={skillSectionRef}
           className="section"
+          id="section-skills"
           initial={{
             borderColor: borderColor,
           }}
