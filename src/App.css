@@ -18,12 +18,7 @@
   flex: 1;
   gap: 40px;
   min-width: 0;
-}
-
-.dashboard > .section,
-.dashboard > a {
-  flex-shrink: 1;
-  min-width: 0;
+  margin: 40px 0;
 }
 
 .section {
@@ -33,6 +28,9 @@
   padding: 30px;
   margin: 0;
   background-color: var(--content-bg-color);
+  flex-shrink: 1;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 section:nth-child(n + 2) {
@@ -91,8 +89,8 @@ a {
 /* 縦並びへの切り替え */
 @media screen and (max-width: 1300px) {
   .main {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 80px;
+    padding-right: 80px;
     padding-top: 60px;
   }
 

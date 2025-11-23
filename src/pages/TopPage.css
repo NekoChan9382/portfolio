@@ -35,3 +35,13 @@
   min-width: 0;
   aspect-ratio: 1.2;
 }
+
+/* 縦並び時の調整 */
+@media screen and (max-width: 1300px) {
+  #section-about,
+  #section-skills {
+    flex-basis: auto;
+    max-width: 100%;
+    width: 100%;
+  }
+}
