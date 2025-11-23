@@ -29,7 +29,6 @@
 .section {
   border: var(--border-width) solid var(--border-color);
   border-radius: 30px;
-  /* height: min-content; */
   min-width: 0;
   padding: 30px;
   margin: 0;
