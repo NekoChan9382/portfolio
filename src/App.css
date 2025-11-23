@@ -16,14 +16,23 @@
   display: flex;
   justify-content: space-between;
   flex: 1;
+  gap: 40px;
+  min-width: 0;
+}
+
+.dashboard > .section,
+.dashboard > a {
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .section {
   border: var(--border-width) solid var(--border-color);
   border-radius: 30px;
-  height: min-content;
+  /* height: min-content; */
+  min-width: 0;
   padding: 30px;
-  margin: 20px;
+  margin: 0;
   background-color: var(--content-bg-color);
 }
 
@@ -38,10 +47,6 @@ section:last-child {
 .section-title h2 {
   margin: 0;
   margin-bottom: 20px;
-}
-
-.about {
-  width: 900px;
 }
 
 .section-content {
@@ -63,4 +68,38 @@ section:last-child {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* 段階的なpadding調整 */
+@media screen and (max-width: 1600px) {
+  .main {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .main {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .dashboard {
+    gap: 30px;
+  }
+}
+
+/* 縦並びへの切り替え */
+@media screen and (max-width: 1300px) {
+  .main {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 60px;
+  }
+
+  .dashboard {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 }

@@ -1,16 +1,29 @@
 .greeting {
   display: flex;
+  width: 100%;
+  min-width: 0;
+  height: auto;
 }
 
 .greeting-image {
-  height: 300px;
-  width: 300px;
+  width: 32%;
+  height: auto;
+  aspect-ratio: 1;
   border-radius: 30px;
   overflow: hidden;
+  flex-shrink: 0;
+}
+
+.greeting-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .greeting-text {
-  margin-left: 30px;
+  margin-left: 3%;
+  flex: 1;
+  min-width: 0;
 }
 
 .about-link-btn {
