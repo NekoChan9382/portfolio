@@ -65,6 +65,9 @@ section:last-child {
 a {
   text-decoration: none;
   color: inherit;
+  height: 100%;
+  width: 100%;
+  display: inline-block;
 }
 
 /* 段階的なpadding調整 */
