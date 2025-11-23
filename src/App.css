@@ -68,7 +68,7 @@ a {
   display: inline-block;
 }
 
-.dashboard > a {
+.dashboard-link {
   height: min-content;
   width: auto;
 }
