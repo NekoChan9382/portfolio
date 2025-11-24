@@ -15,6 +15,7 @@ const Header: React.FC = () => {
     return <NavButton key={b.label} content={b} />;
   });
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   return (
     <header className="header">
@@ -29,7 +30,7 @@ const Header: React.FC = () => {
               <span>Portfolio</span>
             </motion.div>
           </Link>
-          {useIsMobile() ? (
+          {isMobile ? (
             <>
               <Button onClick={() => setIsDrawerOpen(true)}>Menu</Button>
               <Drawer
