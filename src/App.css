@@ -93,7 +93,7 @@ a {
 }
 
 /* 縦並びへの切り替え */
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1000px) {
   .main {
     padding-left: 80px;
     padding-right: 80px;

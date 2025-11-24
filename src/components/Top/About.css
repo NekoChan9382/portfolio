@@ -7,17 +7,12 @@
 
 .greeting-image {
   width: 32%;
-  height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
   border-radius: 30px;
   overflow: hidden;
   flex-shrink: 0;
-}
-
-.greeting-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: block;
+  margin-bottom: auto;
 }
 
 .greeting-text {
