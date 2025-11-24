@@ -95,8 +95,8 @@ a {
 /* 縦並びへの切り替え */
 @media screen and (max-width: 1000px) {
   .main {
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 8%;
+    padding-right: 8%;
     padding-top: 60px;
   }
 
