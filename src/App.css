@@ -7,9 +7,13 @@
 }
 
 .main {
-  padding-top: 80px;
+  padding-top: 60px;
   padding-left: 100px;
   padding-right: 100px;
+}
+
+.main > section:first-child {
+  margin-top: 20px;
 }
 
 .dashboard {

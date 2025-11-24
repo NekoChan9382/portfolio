@@ -15,3 +15,15 @@
 .profile-detail {
   margin-left: 30px;
 }
+
+@media screen and (max-width: 768px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-detail {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
