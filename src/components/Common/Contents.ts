@@ -1,3 +1,5 @@
+import { useMediaQuery } from "react-responsive";
+
 export const SkillTypeList = {
   Front: "Frontend",
   Back: "Backend",
@@ -191,3 +193,9 @@ export const getCSSVariable = (variableName: string): string => {
 
 export const getBorderColor = () => getCSSVariable("--border-color");
 export const getHoverColor = () => getCSSVariable("--hover-color");
+
+const mobileWidth: number = 768;
+
+export const useIsMobile = (): boolean => {
+  return useMediaQuery({ query: `(max-width: ${mobileWidth}px)` });
+};
