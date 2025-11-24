@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
+import { Drawer, Button } from "@mui/material";
+import { useIsMobile } from "./Common/Contents";
 import "./Header.css";
 
 const Header: React.FC = () => {
@@ -12,6 +14,8 @@ const Header: React.FC = () => {
   const navs = buttons.map((b) => {
     return <NavButton key={b.label} content={b} />;
   });
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   return (
     <header className="header">
@@ -26,7 +30,25 @@ const Header: React.FC = () => {
               <span>Portfolio</span>
             </motion.div>
           </Link>
-          <ul className="nav-links">{navs}</ul>
+          {isMobile ? (
+            <>
+              <Button onClick={() => setIsDrawerOpen(true)}>Menu</Button>
+              <Drawer
+                anchor="right"
+                open={isDrawerOpen}
+                onClose={() => {
+                  setIsDrawerOpen(false);
+                }}
+                onClick={() => {
+                  setIsDrawerOpen(false);
+                }}
+              >
+                {navs}
+              </Drawer>
+            </>
+          ) : (
+            <ul className="nav-links">{navs}</ul>
+          )}
         </nav>
       </div>
     </header>

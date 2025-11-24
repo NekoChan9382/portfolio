@@ -24,4 +24,5 @@ img {
   --border-sub-color: #d2a1ff;
   --bg-color: #fdfdfd;
   --content-bg-color: #fffbff;
+  --column-style-threshold: 1000px;
 }

@@ -7,23 +7,19 @@
 
 .greeting-image {
   width: 32%;
-  height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
   border-radius: 30px;
   overflow: hidden;
   flex-shrink: 0;
-}
-
-.greeting-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: block;
+  margin-bottom: auto;
 }
 
 .greeting-text {
   margin-left: 3%;
   flex: 1;
   min-width: 0;
+  object-fit: cover;
 }
 
 .about-link-btn {
@@ -35,4 +31,21 @@
   background-color: var(--hover-color);
   color: white;
   font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .greeting {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .greeting-image {
+    width: 60%;
+    margin-bottom: 20px;
+  }
+
+  .greeting-text {
+    margin-left: 0;
+  }
 }
