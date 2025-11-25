@@ -141,8 +141,22 @@ export const projectList: ProjectContent[] = [
       "自身にアサインされたIssueやレビュー依頼されたPull Requestを通知するツールです。GitHub GraphQL APIを使用して、関連するIssueやPRの情報を取得し、通知を行います。今後に向けた練習のため、Elixirで実装を行いました。また、GitHub Actionsを使用して定期的に実行されるように設定しています。NullTaskerの開発時にレビューを投げても気づかれないことが多かったことをきっかけに、開発効率化の一環として作成しました。",
     link: "https://github.com/NekoChan9382/pr-issue-notification",
     thumbnail: "/assets/pr-issue-notifier.png",
-    imgs: ["/assets/project-screenshots/pr-1.png"],
+    imgs: [
+      "/assets/project-screenshots/pr-1.png",
+      "/assets/project-screenshots/pr-2.png",
+    ],
     techs: ["Elixir", "GitHub"],
+  },
+  {
+    id: "portfolio",
+    name: "Portfolio",
+    about: "React+TypeScriptで作成したポートフォリオサイト(当サイト)",
+    description:
+      "私のポートフォリオサイトです。ReactとTypeScriptを使用しており、コンポーネントベースで設計されています。レスポンシブデザインを採用しており、様々なデバイスで快適に閲覧できます。また、適宜Reactのライブラリを活用して、アニメーションやインタラクティブな要素を実装しています。さらに、GitHub Actions, GitHub Pagesを使用して、CI/CDを実現しています。",
+    link: "https://github.com/NekoChan9382/portfolio",
+    thumbnail: "/assets/kanibaPigeon.jpg",
+    imgs: ["/assets/project-screenshots/portfolio-1.png"],
+    techs: ["React", "TypeScript", "CSS", "GitHub"],
   },
 ];
 
