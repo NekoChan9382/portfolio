@@ -133,7 +133,7 @@ export const skillList: SkillCardContent[] = [
   //     "部のサブマイコンボードとして使用されている、ArduinoやESP32のプログラミングに使用しています",
   // },
   {
-    img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-plain.svg",
+    img: "/assets/stack-icons/vscode.svg",
     name: "VSCode",
     color: "#007ACC",
     type: SkillTypeList.Dev,
