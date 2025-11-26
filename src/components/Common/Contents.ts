@@ -4,6 +4,7 @@ export const SkillTypeList = {
   Front: "Frontend",
   Back: "Backend",
   Dev: "Dev tools",
+  Robo: "Robotics",
 } as const;
 
 export type SkillType = (typeof SkillTypeList)[keyof typeof SkillTypeList];
@@ -24,13 +25,16 @@ export const skillList: SkillCardContent[] = [
     color: "#00599C",
     type: SkillTypeList.Back,
     about: "主にロボット制御プログラムの作成に使用",
+    description: "ロボ部でのロボット制御に使用しています",
   },
   {
     img: "/assets/stack-icons/python.png",
     name: "Python",
     color: "#3776AB",
     type: SkillTypeList.Back,
-    about: "主にデータ解析や機械学習に使用",
+    about: "主にツール開発に使用",
+    description:
+      "ライブラリが充実しており、小さなツール作成などに気軽に使える言語として利用しています",
   },
   {
     img: "/assets/stack-icons/javascript.png",
@@ -38,7 +42,8 @@ export const skillList: SkillCardContent[] = [
     color: "#F7DF1E",
     type: SkillTypeList.Front,
     about: "主にウェブ開発に使用",
-    description: "動的コンテンツの作成、サーバーサイド開発(Node.js)などで利用",
+    description:
+      "動的コンテンツの作成、サーバーサイド開発(Node.js)などで利用しています",
   },
   {
     img: "/assets/stack-icons/typescript.png",
@@ -46,6 +51,8 @@ export const skillList: SkillCardContent[] = [
     color: "#3178C6",
     type: SkillTypeList.Front,
     about: "主にウェブ開発に使用",
+    description:
+      "JavaScriptと比べて型安全性が高く、主にReact開発で好んで使用しています",
   },
   {
     img: "/assets/stack-icons/html5.png",
@@ -53,6 +60,7 @@ export const skillList: SkillCardContent[] = [
     color: "#E34F26",
     type: SkillTypeList.Front,
     about: "主にウェブ開発に使用",
+    description: "ウェブページの基本的な構造の作成に使用しています",
   },
   {
     img: "/assets/stack-icons/css.png",
@@ -60,6 +68,7 @@ export const skillList: SkillCardContent[] = [
     color: "#663399",
     type: SkillTypeList.Front,
     about: "主にウェブ開発に使用",
+    description: "ウェブページのデザインやレイアウトの作成に使用しています",
   },
   {
     img: "/assets/stack-icons/react.png",
@@ -67,13 +76,17 @@ export const skillList: SkillCardContent[] = [
     color: "#61DAFB",
     type: SkillTypeList.Front,
     about: "主にウェブ開発に使用",
+    description:
+      "コンポーネントを用いたUI管理を行い、ウェブアプリケーションの開発に使用しています",
   },
   {
     img: "/assets/stack-icons/elixir.png",
     name: "Elixir",
     color: "#4B275F",
     type: SkillTypeList.Back,
-    about: "主にウェブ開発に使用",
+    about: "主にツール開発に使用",
+    description:
+      "関数型言語の練習として使用し始めました。今後はNervesで組み込み開発にも挑戦する予定です",
   },
   {
     img: "/assets/stack-icons/git.png",
@@ -81,6 +94,7 @@ export const skillList: SkillCardContent[] = [
     color: "#F05032",
     type: SkillTypeList.Dev,
     about: "主にバージョン管理に使用",
+    description: "ソースコードのバージョン管理に使用しています",
   },
   {
     img: "/assets/stack-icons/github.png",
@@ -88,6 +102,35 @@ export const skillList: SkillCardContent[] = [
     color: "#181717",
     type: SkillTypeList.Dev,
     about: "主にバージョン管理に使用",
+    description:
+      "ソースコードのバージョン管理や、GitHub Actionsを用いたCI/CDに利用していますfaaaaaaaa",
+  },
+  {
+    img: "/assets/stack-icons/ros.png",
+    name: "ROS2",
+    color: "#22314E",
+    type: SkillTypeList.Robo,
+    about: "主にロボット通信に使用",
+    description:
+      "ロボットとセンサー、コントローラーなどとの通信に使用しています",
+  },
+  {
+    img: "/assets/stack-icons/arduino.png",
+    name: "Arduino",
+    color: "#00878F",
+    type: SkillTypeList.Robo,
+    about: "主にマイコン制御に使用",
+    description:
+      "部のサブマイコンボードとして使用されている、ArduinoやESP32のプログラミングに使用しています",
+  },
+  {
+    img: "/assets/stack-icons/vscode.png",
+    name: "VSCode",
+    color: "#007ACC",
+    type: SkillTypeList.Dev,
+    about: "主にコード編集に使用",
+    description:
+      "多くの言語に対応しており、拡張機能も豊富なため、主にコード編集に使用しています",
   },
 ];
 
