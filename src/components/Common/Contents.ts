@@ -103,7 +103,7 @@ export const skillList: SkillCardContent[] = [
     type: SkillTypeList.Dev,
     about: "主にバージョン管理に使用",
     description:
-      "ソースコードのバージョン管理や、GitHub Actionsを用いたCI/CDに利用していますfaaaaaaaa",
+      "ソースコードのバージョン管理や、GitHub Actionsを用いたCI/CDに利用しています",
   },
   {
     img: "/assets/stack-icons/ros.png",
@@ -114,23 +114,41 @@ export const skillList: SkillCardContent[] = [
     description:
       "ロボットとセンサー、コントローラーなどとの通信に使用しています",
   },
+  // {
+  //   img: "/assets/stack-icons/mbed.png",
+  //   name: "mbed",
+  //   color: "#008FBE",
+  //   type: SkillTypeList.Robo,
+  //   about: "主にマイコン制御に使用",
+  //   description:
+  //     "部のメインマイコンボードとして使用されている、STM32マイコンのプログラミングに使用しています",
+  // },
+  // {
+  //   img: "/assets/stack-icons/arduino.png",
+  //   name: "Arduino",
+  //   color: "#00878F",
+  //   type: SkillTypeList.Robo,
+  //   about: "主にマイコン制御に使用",
+  //   description:
+  //     "部のサブマイコンボードとして使用されている、ArduinoやESP32のプログラミングに使用しています",
+  // },
   {
-    img: "/assets/stack-icons/arduino.png",
-    name: "Arduino",
-    color: "#00878F",
-    type: SkillTypeList.Robo,
-    about: "主にマイコン制御に使用",
-    description:
-      "部のサブマイコンボードとして使用されている、ArduinoやESP32のプログラミングに使用しています",
-  },
-  {
-    img: "/assets/stack-icons/vscode.png",
+    img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-plain.svg",
     name: "VSCode",
     color: "#007ACC",
     type: SkillTypeList.Dev,
     about: "主にコード編集に使用",
     description:
       "多くの言語に対応しており、拡張機能も豊富なため、主にコード編集に使用しています",
+  },
+  {
+    img: "/assets/stack-icons/nodedotjs.png",
+    name: "Node.js",
+    color: "#5FA04E",
+    type: SkillTypeList.Back,
+    about: "主にサーバーサイドAPI開発、ビルドツールとして使用",
+    description:
+      "Webサーバーの構築や、ウェブアプリケーションのビルドに使用しています",
   },
 ];
 
@@ -179,7 +197,7 @@ export const projectList: ProjectContent[] = [
   {
     id: "pr-issue-notifier",
     name: "PR Issue Notifier",
-    about: "GitHubのPRに関連するIssueを通知するツール",
+    about: "GitHubのPRやIssueを通知するツール",
     description:
       "自身にアサインされたIssueやレビュー依頼されたPull Requestを通知するツールです。GitHub GraphQL APIを使用して、関連するIssueやPRの情報を取得し、通知を行います。今後に向けた練習のため、Elixirで実装を行いました。また、GitHub Actionsを使用して定期的に実行されるように設定しています。NullTaskerの開発時にレビューを投げても気づかれないことが多かったことをきっかけに、開発効率化の一環として作成しました。",
     link: "https://github.com/NekoChan9382/pr-issue-notification",
