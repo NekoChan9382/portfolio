@@ -4,6 +4,7 @@ export const SkillTypeList = {
   Front: "Frontend",
   Back: "Backend",
   Dev: "Dev tools",
+  Robo: "Robotics",
 } as const;
 
 export type SkillType = (typeof SkillTypeList)[keyof typeof SkillTypeList];
@@ -24,13 +25,16 @@ export const skillList: SkillCardContent[] = [
     color: "#00599C",
     type: SkillTypeList.Back,
     about: "主にロボット制御プログラムの作成に使用",
+    description: "ロボ部でのロボット制御に使用しています",
   },
   {
     img: "/assets/stack-icons/python.png",
     name: "Python",
     color: "#3776AB",
     type: SkillTypeList.Back,
-    about: "主にデータ解析や機械学習に使用",
+    about: "主にツール開発に使用",
+    description:
+      "ライブラリが充実しており、小さなツール作成などに気軽に使える言語として利用しています",
   },
   {
     img: "/assets/stack-icons/javascript.png",
@@ -38,7 +42,8 @@ export const skillList: SkillCardContent[] = [
     color: "#F7DF1E",
     type: SkillTypeList.Front,
     about: "主にウェブ開発に使用",
-    description: "動的コンテンツの作成、サーバーサイド開発(Node.js)などで利用",
+    description:
+      "動的コンテンツの作成、サーバーサイド開発(Node.js)などで利用しています",
   },
   {
     img: "/assets/stack-icons/typescript.png",
@@ -46,6 +51,8 @@ export const skillList: SkillCardContent[] = [
     color: "#3178C6",
     type: SkillTypeList.Front,
     about: "主にウェブ開発に使用",
+    description:
+      "JavaScriptと比べて型安全性が高く、主にReact開発で好んで使用しています",
   },
   {
     img: "/assets/stack-icons/html5.png",
@@ -53,6 +60,7 @@ export const skillList: SkillCardContent[] = [
     color: "#E34F26",
     type: SkillTypeList.Front,
     about: "主にウェブ開発に使用",
+    description: "ウェブページの基本的な構造の作成に使用しています",
   },
   {
     img: "/assets/stack-icons/css.png",
@@ -60,6 +68,7 @@ export const skillList: SkillCardContent[] = [
     color: "#663399",
     type: SkillTypeList.Front,
     about: "主にウェブ開発に使用",
+    description: "ウェブページのデザインやレイアウトの作成に使用しています",
   },
   {
     img: "/assets/stack-icons/react.png",
@@ -67,13 +76,17 @@ export const skillList: SkillCardContent[] = [
     color: "#61DAFB",
     type: SkillTypeList.Front,
     about: "主にウェブ開発に使用",
+    description:
+      "コンポーネントを用いたUI管理を行い、ウェブアプリケーションの開発に使用しています",
   },
   {
     img: "/assets/stack-icons/elixir.png",
     name: "Elixir",
     color: "#4B275F",
     type: SkillTypeList.Back,
-    about: "主にウェブ開発に使用",
+    about: "主にツール開発に使用",
+    description:
+      "関数型言語の練習として使用し始めました。今後はNervesで組み込み開発にも挑戦する予定です",
   },
   {
     img: "/assets/stack-icons/git.png",
@@ -81,6 +94,7 @@ export const skillList: SkillCardContent[] = [
     color: "#F05032",
     type: SkillTypeList.Dev,
     about: "主にバージョン管理に使用",
+    description: "ソースコードのバージョン管理に使用しています",
   },
   {
     img: "/assets/stack-icons/github.png",
@@ -88,6 +102,53 @@ export const skillList: SkillCardContent[] = [
     color: "#181717",
     type: SkillTypeList.Dev,
     about: "主にバージョン管理に使用",
+    description:
+      "ソースコードのバージョン管理や、GitHub Actionsを用いたCI/CDに利用しています",
+  },
+  {
+    img: "/assets/stack-icons/ros.png",
+    name: "ROS2",
+    color: "#22314E",
+    type: SkillTypeList.Robo,
+    about: "主にロボット通信に使用",
+    description:
+      "ロボットとセンサー、コントローラーなどとの通信に使用しています",
+  },
+  // {
+  //   img: "/assets/stack-icons/mbed.png",
+  //   name: "mbed",
+  //   color: "#008FBE",
+  //   type: SkillTypeList.Robo,
+  //   about: "主にマイコン制御に使用",
+  //   description:
+  //     "部のメインマイコンボードとして使用されている、STM32マイコンのプログラミングに使用しています",
+  // },
+  // {
+  //   img: "/assets/stack-icons/arduino.png",
+  //   name: "Arduino",
+  //   color: "#00878F",
+  //   type: SkillTypeList.Robo,
+  //   about: "主にマイコン制御に使用",
+  //   description:
+  //     "部のサブマイコンボードとして使用されている、ArduinoやESP32のプログラミングに使用しています",
+  // },
+  {
+    img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-plain.svg",
+    name: "VSCode",
+    color: "#007ACC",
+    type: SkillTypeList.Dev,
+    about: "主にコード編集に使用",
+    description:
+      "多くの言語に対応しており、拡張機能も豊富なため、主にコード編集に使用しています",
+  },
+  {
+    img: "/assets/stack-icons/nodedotjs.png",
+    name: "Node.js",
+    color: "#5FA04E",
+    type: SkillTypeList.Back,
+    about: "主にサーバーサイドAPI開発、ビルドツールとして使用",
+    description:
+      "Webサーバーの構築や、ウェブアプリケーションのビルドに使用しています",
   },
 ];
 
@@ -136,13 +197,27 @@ export const projectList: ProjectContent[] = [
   {
     id: "pr-issue-notifier",
     name: "PR Issue Notifier",
-    about: "GitHubのPRに関連するIssueを通知するツール",
+    about: "GitHubのPRやIssueを通知するツール",
     description:
       "自身にアサインされたIssueやレビュー依頼されたPull Requestを通知するツールです。GitHub GraphQL APIを使用して、関連するIssueやPRの情報を取得し、通知を行います。今後に向けた練習のため、Elixirで実装を行いました。また、GitHub Actionsを使用して定期的に実行されるように設定しています。NullTaskerの開発時にレビューを投げても気づかれないことが多かったことをきっかけに、開発効率化の一環として作成しました。",
     link: "https://github.com/NekoChan9382/pr-issue-notification",
     thumbnail: "/assets/pr-issue-notifier.png",
-    imgs: ["/assets/project-screenshots/pr-1.png"],
+    imgs: [
+      "/assets/project-screenshots/pr-1.png",
+      "/assets/project-screenshots/pr-2.png",
+    ],
     techs: ["Elixir", "GitHub"],
+  },
+  {
+    id: "portfolio",
+    name: "Portfolio",
+    about: "React+TypeScriptで作成したポートフォリオサイト(当サイト)",
+    description:
+      "私のポートフォリオサイトです。ReactとTypeScriptを使用しており、コンポーネントベースで設計されています。レスポンシブデザインを採用しており、様々なデバイスで快適に閲覧できます。また、適宜Reactのライブラリを活用して、アニメーションやインタラクティブな要素を実装しています。さらに、GitHub Actions, GitHub Pagesを使用して、CI/CDを実現しています。",
+    link: "https://github.com/NekoChan9382/portfolio",
+    thumbnail: "/assets/kanibaPigeon.jpg",
+    imgs: ["/assets/project-screenshots/portfolio-1.png"],
+    techs: ["React", "TypeScript", "CSS", "GitHub"],
   },
 ];
 
