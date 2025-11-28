@@ -2,6 +2,7 @@ import React from "react";
 import { ProjectContent, projectList } from "../Common/Contents";
 import Section from "../Common/Section";
 import styles from "./ProjectList.module.css";
+import { Modal } from "@mui/material";
 
 const ProjectList: React.FC = () => {
   const cards = projectList.map((p) => (
@@ -47,33 +48,51 @@ const ProjectCard: React.FC<{ content: ProjectContent }> = ({ content }) => {
 
 const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
   const [selectedImgIndex, setSelectedImgIndex] = React.useState<number>(0);
+  const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
   return (
-    <div className={styles.projectImages}>
-      <div className={styles.mainImage}>
-        {imgs.length > 0 && (
-          <img
-            src={`${process.env.PUBLIC_URL}${imgs[selectedImgIndex]}`}
-            alt="Project main"
-          />
-        )}
-      </div>
-      <div className={styles.thumbnailContainer}>
-        {imgs.map((img, index) => (
-          <button
-            key={index}
-            className={`${styles.projectImage} ${
-              selectedImgIndex === index ? styles.selected : ""
-            }`}
-            onClick={() => setSelectedImgIndex(index)}
-          >
+    <>
+      <div className={styles.projectImages}>
+        <div className={styles.mainImage}>
+          {imgs.length > 0 && (
             <img
-              src={`${process.env.PUBLIC_URL}${img}`}
-              alt={`Project screenshot ${index + 1}`}
+              src={`${process.env.PUBLIC_URL}${imgs[selectedImgIndex]}`}
+              alt="Project main"
+              onClick={() => setIsModalOpen(true)}
+              role="button"
             />
-          </button>
-        ))}
+          )}
+        </div>
+        <div className={styles.thumbnailContainer}>
+          {imgs.map((img, index) => (
+            <button
+              key={index}
+              className={`${styles.projectImage} ${
+                selectedImgIndex === index ? styles.selected : ""
+              }`}
+              onClick={() => setSelectedImgIndex(index)}
+            >
+              <img
+                src={`${process.env.PUBLIC_URL}${img}`}
+                alt={`Project screenshot ${index + 1}`}
+              />
+            </button>
+          ))}
+        </div>
       </div>
-    </div>
+      <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className={styles.imageModal}>
+          {imgs.length > 0 && (
+            <>
+              <img
+                src={`${process.env.PUBLIC_URL}${imgs[selectedImgIndex]}`}
+                alt="Project enlarged"
+              />
+              <p>{`${selectedImgIndex + 1} / ${imgs.length}`}</p>
+            </>
+          )}
+        </div>
+      </Modal>
+    </>
   );
 };
 export default ProjectList;
