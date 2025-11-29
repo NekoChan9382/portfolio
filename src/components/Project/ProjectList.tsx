@@ -136,18 +136,17 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
           {imgs.length > 0 && (
             <>
               <div className={styles.modalContent}>
-                <motion.div
+                <motion.button
                   className={styles.changeImageBtn}
                   onClick={() => paginate(-1)}
                   variants={pageArrowVariants}
                   initial="initial"
                   whileHover="hover"
                   transition={{ duration: 0.2, ease: "easeInOut" }}
-                  tabIndex={0}
-                  role="button"
+                  aria-label="Previous Image"
                 >
                   <FontAwesomeIcon icon={faCaretLeft} />
-                </motion.div>
+                </motion.button>
 
                 <div className={styles.imageContainer}>
                   <AnimatePresence
@@ -170,18 +169,17 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
                   </AnimatePresence>
                 </div>
 
-                <motion.div
+                <motion.button
                   className={styles.changeImageBtn}
                   onClick={() => paginate(1)}
                   variants={pageArrowVariants}
                   initial="initial"
                   whileHover="hover"
                   transition={{ duration: 0.2, ease: "easeInOut" }}
-                  tabIndex={0}
-                  role="button"
+                  aria-label="Next Image"
                 >
                   <FontAwesomeIcon icon={faCaretRight} />
-                </motion.div>
+                </motion.button>
               </div>
               <p>{`${selectedImgIndex + 1} / ${imgs.length}`}</p>
             </>
