@@ -86,10 +86,11 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
   const pageArrowVariants = {
     initial: {
       color: "black",
+      borderColor: borderColor,
     },
     hover: {
       color: hoverColor,
-      borderColor: borderColor,
+      borderColor: hoverColor,
       boxShadow: `0 0 20px ${hoverColor}40`,
     },
   };
@@ -135,20 +136,17 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
           {imgs.length > 0 && (
             <>
               <div className={styles.modalContent}>
-                <motion.div
+                <motion.button
                   className={styles.changeImageBtn}
+                  onClick={() => paginate(-1)}
                   variants={pageArrowVariants}
                   initial="initial"
                   whileHover="hover"
                   transition={{ duration: 0.2, ease: "easeInOut" }}
+                  aria-label="Previous Image"
                 >
-                  <button
-                    onClick={() => paginate(-1)}
-                    aria-label="Previous Image"
-                  >
-                    <FontAwesomeIcon icon={faCaretLeft} />
-                  </button>
-                </motion.div>
+                  <FontAwesomeIcon icon={faCaretLeft} />
+                </motion.button>
 
                 <div className={styles.imageContainer}>
                   <AnimatePresence
@@ -171,17 +169,17 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
                   </AnimatePresence>
                 </div>
 
-                <motion.div
+                <motion.button
                   className={styles.changeImageBtn}
+                  onClick={() => paginate(1)}
                   variants={pageArrowVariants}
                   initial="initial"
                   whileHover="hover"
                   transition={{ duration: 0.2, ease: "easeInOut" }}
+                  aria-label="Next Image"
                 >
-                  <button onClick={() => paginate(1)} aria-label="Next Image">
-                    <FontAwesomeIcon icon={faCaretRight} />
-                  </button>
-                </motion.div>
+                  <FontAwesomeIcon icon={faCaretRight} />
+                </motion.button>
               </div>
               <p>{`${selectedImgIndex + 1} / ${imgs.length}`}</p>
             </>

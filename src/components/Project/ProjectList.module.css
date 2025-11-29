@@ -116,14 +116,11 @@
   border: var(--border-width) solid var(--border-color);
   border-radius: 50%;
   cursor: pointer;
+  font-size: 18px;
 }
 
-.changeImageBtn button {
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  color: inherit;
+.changeImageBtn > svg {
+  transition: color 0.2s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
