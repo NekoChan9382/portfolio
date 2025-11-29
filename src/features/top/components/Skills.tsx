@@ -1,6 +1,6 @@
 import React from "react";
 import { SkillCardContent, SkillType } from "../../../shared/data/Contents";
-import { SkillGroups } from "../../skills/utils/SkillUtils";
+import { SkillGroups } from "../../../shared/utils/SkillUtils";
 import SkillCard from "../../../shared/components/SkillCard/SkillCard";
 import Section from "../../../shared/components/Section/Section";
 import "./Skills.css";

@@ -4,7 +4,7 @@ import {
   SkillCardContent,
   getHoverColor,
 } from "../../../shared/data/Contents";
-import { SkillGroups } from "../utils/SkillUtils";
+import { SkillGroups } from "../../../shared/utils/SkillUtils";
 import { motion, AnimatePresence } from "motion/react";
 import SkillCard from "../../../shared/components/SkillCard/SkillCard";
 import Section from "../../../shared/components/Section/Section";

@@ -3,7 +3,7 @@ import {
   SkillTypeList,
   SkillType,
   SkillCardContent,
-} from "../../../shared/data/Contents";
+} from "../data/Contents";
 
 type SkillGroup = {
   category: SkillType;
