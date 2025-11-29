@@ -1,9 +1,16 @@
 import React from "react";
-import { ProjectContent, projectList } from "../Common/Contents";
+import {
+  getBorderColor,
+  getHoverColor,
+  ProjectContent,
+  projectList,
+} from "../Common/Contents";
 import Section from "../Common/Section";
 import styles from "./ProjectList.module.css";
 import { Modal } from "@mui/material";
 import { motion, AnimatePresence } from "motion/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
 const ProjectList: React.FC = () => {
   const cards = projectList.map((p) => (
@@ -50,10 +57,12 @@ const ProjectCard: React.FC<{ content: ProjectContent }> = ({ content }) => {
 const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
   const [selectedImgIndex, setSelectedImgIndex] = React.useState<number>(0);
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
-  const [direction, setDirection] = React.useState<number>(0);
+  const direction = React.useRef<number>(0);
+  const hoverColor = getHoverColor();
+  const borderColor = getBorderColor();
 
   const paginate = (newDirection: number) => {
-    setDirection(newDirection);
+    direction.current = newDirection;
     setSelectedImgIndex(
       (prevIndex) => (prevIndex + newDirection + imgs.length) % imgs.length
     );
@@ -72,6 +81,17 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
       x: direction < 0 ? 300 : -300,
       opacity: 0,
     }),
+  };
+
+  const pageArrowVariants = {
+    initial: {
+      color: "black",
+    },
+    hover: {
+      color: hoverColor,
+      borderColor: borderColor,
+      boxShadow: `0 0 20px ${hoverColor}40`,
+    },
   };
 
   return (
@@ -105,47 +125,54 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
         </div>
       </div>
       <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <div className={styles.imageModal}>
+        <div className="modal">
           {imgs.length > 0 && (
             <>
               <div className={styles.modalContent}>
-                <div className={styles.changeImageBtn}>
-                  <button onClick={() => paginate(-1)}>&#8592;</button>
-                </div>
-
-                <div
-                  style={{
-                    position: "relative",
-                    width: "600px",
-                    height: "400px",
-                    overflow: "hidden",
-                  }}
+                <motion.div
+                  className={styles.changeImageBtn}
+                  variants={pageArrowVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
+                  <button onClick={() => paginate(-1)}>
+                    <FontAwesomeIcon icon={faCaretLeft} />
+                  </button>
+                </motion.div>
+
+                <div className={styles.imageContainer}>
                   <AnimatePresence
                     initial={false}
-                    custom={direction}
+                    custom={direction.current}
                     mode="sync"
                   >
                     <motion.img
+                      className={styles.modalImage}
                       key={selectedImgIndex}
                       src={`${process.env.PUBLIC_URL}${imgs[selectedImgIndex]}`}
                       alt="Project enlarged"
-                      custom={direction}
+                      custom={direction.current}
                       variants={slideVariants}
                       initial="enter"
                       animate="center"
                       exit="exit"
-                      transition={{
-                        x: { type: "spring", stiffness: 300, damping: 30 },
-                        opacity: { duration: 0.2 },
-                      }}
+                      transition={{ ease: "easeOut", duration: 0.3 }}
                     />
                   </AnimatePresence>
                 </div>
 
-                <div className={styles.changeImageBtn}>
-                  <button onClick={() => paginate(1)}>&#8594;</button>
-                </div>
+                <motion.div
+                  className={styles.changeImageBtn}
+                  variants={pageArrowVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                >
+                  <button onClick={() => paginate(1)}>
+                    <FontAwesomeIcon icon={faCaretRight} />
+                  </button>
+                </motion.div>
               </div>
               <p>{`${selectedImgIndex + 1} / ${imgs.length}`}</p>
             </>
