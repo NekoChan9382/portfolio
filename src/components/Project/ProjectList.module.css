@@ -91,16 +91,6 @@
   align-items: center;
 }
 
-.changeImageBtn {
-  background: none;
-  border: none;
-  font-size: 30px;
-  font-weight: bold;
-  cursor: pointer;
-  color: var(--text-color);
-  margin: 10px;
-}
-
 .modalImage {
   position: absolute;
   max-width: 100%;
@@ -118,6 +108,7 @@
 .changeImageBtn {
   width: 30px;
   height: 30px;
+  margin: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
