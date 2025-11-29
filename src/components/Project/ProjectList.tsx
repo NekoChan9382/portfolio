@@ -86,10 +86,11 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
   const pageArrowVariants = {
     initial: {
       color: "black",
+      borderColor: borderColor,
     },
     hover: {
       color: hoverColor,
-      borderColor: borderColor,
+      borderColor: hoverColor,
       boxShadow: `0 0 20px ${hoverColor}40`,
     },
   };
