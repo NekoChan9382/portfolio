@@ -104,6 +104,12 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
               alt="Project main"
               onClick={() => setIsModalOpen(true)}
               role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  setIsModalOpen(true);
+                }
+              }}
             />
           )}
         </div>
@@ -136,7 +142,10 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
                   whileHover="hover"
                   transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
-                  <button onClick={() => paginate(-1)}>
+                  <button
+                    onClick={() => paginate(-1)}
+                    aria-label="Previous Image"
+                  >
                     <FontAwesomeIcon icon={faCaretLeft} />
                   </button>
                 </motion.div>
@@ -169,7 +178,7 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
                   whileHover="hover"
                   transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
-                  <button onClick={() => paginate(1)}>
+                  <button onClick={() => paginate(1)} aria-label="Next Image">
                     <FontAwesomeIcon icon={faCaretRight} />
                   </button>
                 </motion.div>
