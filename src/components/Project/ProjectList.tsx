@@ -3,6 +3,7 @@ import { ProjectContent, projectList } from "../Common/Contents";
 import Section from "../Common/Section";
 import styles from "./ProjectList.module.css";
 import { Modal } from "@mui/material";
+import { motion, AnimatePresence } from "motion/react";
 
 const ProjectList: React.FC = () => {
   const cards = projectList.map((p) => (
@@ -49,6 +50,30 @@ const ProjectCard: React.FC<{ content: ProjectContent }> = ({ content }) => {
 const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
   const [selectedImgIndex, setSelectedImgIndex] = React.useState<number>(0);
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
+  const [direction, setDirection] = React.useState<number>(0);
+
+  const paginate = (newDirection: number) => {
+    setDirection(newDirection);
+    setSelectedImgIndex(
+      (prevIndex) => (prevIndex + newDirection + imgs.length) % imgs.length
+    );
+  };
+
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 300 : -300,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: number) => ({
+      x: direction < 0 ? 300 : -300,
+      opacity: 0,
+    }),
+  };
+
   return (
     <>
       <div className={styles.projectImages}>
@@ -83,10 +108,45 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
         <div className={styles.imageModal}>
           {imgs.length > 0 && (
             <>
-              <img
-                src={`${process.env.PUBLIC_URL}${imgs[selectedImgIndex]}`}
-                alt="Project enlarged"
-              />
+              <div className={styles.modalContent}>
+                <div className={styles.changeImageBtn}>
+                  <button onClick={() => paginate(-1)}>&#8592;</button>
+                </div>
+
+                <div
+                  style={{
+                    position: "relative",
+                    width: "600px",
+                    height: "400px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <AnimatePresence
+                    initial={false}
+                    custom={direction}
+                    mode="sync"
+                  >
+                    <motion.img
+                      key={selectedImgIndex}
+                      src={`${process.env.PUBLIC_URL}${imgs[selectedImgIndex]}`}
+                      alt="Project enlarged"
+                      custom={direction}
+                      variants={slideVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      transition={{
+                        x: { type: "spring", stiffness: 300, damping: 30 },
+                        opacity: { duration: 0.2 },
+                      }}
+                    />
+                  </AnimatePresence>
+                </div>
+
+                <div className={styles.changeImageBtn}>
+                  <button onClick={() => paginate(1)}>&#8594;</button>
+                </div>
+              </div>
               <p>{`${selectedImgIndex + 1} / ${imgs.length}`}</p>
             </>
           )}
