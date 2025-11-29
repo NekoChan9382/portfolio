@@ -1,0 +1,24 @@
+import React from "react";
+import { useLocation } from "react-router-dom";
+import ProjectList from "../components/ProjectList";
+import "./ProjectPage.css";
+
+const ProjectPage: React.FC = () => {
+  const location = useLocation();
+
+  React.useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 30);
+    }
+  }, [location]);
+
+  return <ProjectList />;
+};
+
+export default ProjectPage;
