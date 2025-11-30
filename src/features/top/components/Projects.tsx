@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "motion/react";
-import { ProjectContent, projectList } from "../../../shared/data/Contents";
+import { ProjectContent } from "../../../shared/types/Types";
+import { projectList } from "../../../shared/data/Contents";
 import Section from "../../../shared/components/Section/Section";
-import { getBorderColor, getHoverColor } from "../../../shared/data/Contents";
+import { getBorderColor, getHoverColor } from "../../../shared/utils/Helper";
 import { Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./Projects.css";

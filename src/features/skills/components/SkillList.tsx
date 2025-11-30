@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import {
-  SkillType,
-  SkillCardContent,
-  getHoverColor,
-} from "../../../shared/data/Contents";
-import { SkillGroups } from "../../../shared/utils/SkillUtils";
+import { SkillType, SkillCardContent } from "../../../shared/types/Types";
+import { SkillGroups, getHoverColor } from "../../../shared/utils/Helper";
 import { motion, AnimatePresence } from "motion/react";
 import SkillCard from "../../../shared/components/SkillCard/SkillCard";
 import Section from "../../../shared/components/Section/Section";

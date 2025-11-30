@@ -1,5 +1,5 @@
 import React from "react";
-import { SkillCardContent } from "../../data/Contents";
+import { SkillCardContent } from "../../types/Types";
 
 type SkillCardProps = {
   skill: SkillCardContent;

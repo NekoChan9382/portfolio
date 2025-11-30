@@ -5,5 +5,11 @@ export { default as Footer } from "./components/Footer/Footer";
 export { default as Section } from "./components/Section/Section";
 export { default as SkillCard } from "./components/SkillCard/SkillCard";
 
-// Data & Utils
+// Types
+export * from "./types/Types";
+
+// Data
 export * from "./data/Contents";
+
+// Utils
+export * from "./utils/Helper";

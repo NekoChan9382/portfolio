@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Drawer, Button } from "@mui/material";
-import { useIsMobile } from "../../data/Contents";
+import { useIsMobile } from "../../utils/Helper";
 import "./Header.css";
 
 const Header: React.FC = () => {

@@ -1,22 +1,9 @@
-import { useMediaQuery } from "react-responsive";
-
-export const SkillTypeList = {
-  Front: "Frontend",
-  Back: "Backend",
-  Dev: "Dev tools",
-  Robo: "Robotics",
-} as const;
-
-export type SkillType = (typeof SkillTypeList)[keyof typeof SkillTypeList];
-
-export type SkillCardContent = {
-  img: string;
-  name: string;
-  color: string;
-  type: SkillType;
-  about: string;
-  description?: string;
-};
+import {
+  SkillTypeList,
+  ProjectContent,
+  CareerItemContent,
+  SkillCardContent,
+} from "../types/Types";
 
 export const skillList: SkillCardContent[] = [
   {
@@ -152,17 +139,6 @@ export const skillList: SkillCardContent[] = [
   },
 ];
 
-export type ProjectContent = {
-  id: string;
-  name: string;
-  about: string;
-  description?: string;
-  link: string;
-  thumbnail: string;
-  imgs?: string[];
-  techs: string[];
-};
-
 export const projectList: ProjectContent[] = [
   {
     id: "nulltasker",
@@ -221,12 +197,6 @@ export const projectList: ProjectContent[] = [
   },
 ];
 
-export type CareerItemContent = {
-  date: string;
-  title: string;
-  description: string;
-};
-
 export const careerList: CareerItemContent[] = [
   {
     date: "2024.04",
@@ -259,18 +229,3 @@ export const careerList: CareerItemContent[] = [
     description: "Bチーム操縦を担当 田中貴金属グループ賞受賞",
   },
 ];
-
-export const getCSSVariable = (variableName: string): string => {
-  return getComputedStyle(document.documentElement)
-    .getPropertyValue(variableName)
-    .trim();
-};
-
-export const getBorderColor = () => getCSSVariable("--border-color");
-export const getHoverColor = () => getCSSVariable("--hover-color");
-
-const mobileWidth: number = 768;
-
-export const useIsMobile = (): boolean => {
-  return useMediaQuery({ query: `(max-width: ${mobileWidth}px)` });
-};

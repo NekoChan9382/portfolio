@@ -6,7 +6,7 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import { Popper } from "@mui/material";
 import { Link } from "react-router-dom";
-import { getBorderColor, getHoverColor } from "../../../shared/data/Contents";
+import { getBorderColor, getHoverColor } from "../../../shared/utils/Helper";
 
 const TopPage: React.FC = () => {
   const borderColor = getBorderColor();
