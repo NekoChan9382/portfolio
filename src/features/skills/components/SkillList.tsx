@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SkillType, SkillCardContent } from "../../../shared/types/Types";
+import { SkillCategory, SkillCardContent } from "../../../shared/types/Types";
 import { SkillGroups, getHoverColor } from "../../../shared/utils/Helper";
 import { motion, AnimatePresence } from "motion/react";
 import SkillCard from "../../../shared/components/SkillCard/SkillCard";
@@ -34,7 +34,7 @@ const SkillList: React.FC = () => {
 };
 
 type GridItemProps = {
-  category: SkillType;
+  category: SkillCategory;
   skills: SkillCardContent[];
   onSkillClick: (skill: SkillCardContent) => void;
   selectedSkill: SkillCardContent | null;

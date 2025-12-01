@@ -1,5 +1,5 @@
 import React from "react";
-import { SkillCardContent, SkillType } from "../../../shared/types/Types";
+import { SkillCardContent, SkillCategory } from "../../../shared/types/Types";
 import { SkillGroups } from "../../../shared/utils/Helper";
 import SkillCard from "../../../shared/components/SkillCard/SkillCard";
 import Section from "../../../shared/components/Section/Section";
@@ -22,7 +22,7 @@ const Skills: React.FC = () => {
 };
 
 type SkillSectionProps = {
-  category: SkillType;
+  category: SkillCategory;
   skills: SkillCardContent[];
 };
 

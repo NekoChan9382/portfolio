@@ -1,17 +1,18 @@
-export const SkillTypeList = {
+export const SkillCategoryList = {
   Front: "Frontend",
   Back: "Backend",
   Dev: "Dev tools",
   Robo: "Robotics",
 } as const;
 
-export type SkillType = (typeof SkillTypeList)[keyof typeof SkillTypeList];
+export type SkillCategory =
+  (typeof SkillCategoryList)[keyof typeof SkillCategoryList];
 
 export type SkillCardContent = {
   img: string;
   name: string;
   color: string;
-  type: SkillType;
+  type: SkillCategory;
   about: string;
   description?: string;
 };
@@ -34,6 +35,6 @@ export type CareerItemContent = {
 };
 
 export type GroupedSkills = {
-  category: SkillType;
+  category: SkillCategory;
   skills: SkillCardContent[];
 };

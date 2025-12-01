@@ -1,12 +1,12 @@
-import { SkillTypeList, GroupedSkills } from "../types/Types";
+import { SkillCategoryList, GroupedSkills } from "../types/Types";
 import { skillList } from "../data/Contents";
 import { useMediaQuery } from "react-responsive";
-export const SkillGroups: GroupedSkills[] = Object.values(SkillTypeList).map(
-  (category) => ({
-    category,
-    skills: skillList.filter((skill) => skill.type === category),
-  })
-);
+export const SkillGroups: GroupedSkills[] = Object.values(
+  SkillCategoryList
+).map((category) => ({
+  category,
+  skills: skillList.filter((skill) => skill.type === category),
+}));
 
 export const getCSSVariable = (variableName: string): string => {
   return getComputedStyle(document.documentElement)
