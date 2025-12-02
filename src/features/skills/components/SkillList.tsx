@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SkillCategory, SkillCardContent } from "../../../shared/types/Types";
+import { SkillCardContent, GroupedSkills } from "../../../shared/types/Types";
 import { SkillGroups, getHoverColor } from "../../../shared/utils/Helper";
 import { motion, AnimatePresence } from "motion/react";
 import SkillCard from "../../../shared/components/SkillCard/SkillCard";
@@ -19,8 +19,7 @@ const SkillList: React.FC = () => {
   const Grids = groupedSkills.map((group) => (
     <GridItem
       key={group.category}
-      category={group.category}
-      skills={group.skills}
+      skills={group}
       onSkillClick={OnSkillCardClick}
       selectedSkill={selectedSkill}
     />
@@ -34,23 +33,21 @@ const SkillList: React.FC = () => {
 };
 
 type GridItemProps = {
-  category: SkillCategory;
-  skills: SkillCardContent[];
+  skills: GroupedSkills;
   onSkillClick: (skill: SkillCardContent) => void;
   selectedSkill: SkillCardContent | null;
 };
 
 const GridItem: React.FC<GridItemProps> = ({
-  category,
   skills,
   onSkillClick,
   selectedSkill,
 }) => {
   return (
     <div className={styles.gridItem}>
-      <h2 className={styles.skillCategory}>{category}</h2>
+      <h2 className={styles.skillCategory}>{skills.category}</h2>
       <div className={styles.cards}>
-        {skills.map((skill) => (
+        {skills.skills.map((skill) => (
           <motion.div
             key={skill.name}
             initial={{ y: 0 }}
@@ -71,7 +68,7 @@ const GridItem: React.FC<GridItemProps> = ({
         ))}
       </div>
       <AnimatePresence mode="sync">
-        {selectedSkill && selectedSkill.type === category && (
+        {selectedSkill && selectedSkill.type === skills.category && (
           <motion.div
             key={selectedSkill.name}
             initial={{ opacity: 0, height: 0, y: -20 }}

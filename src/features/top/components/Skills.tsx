@@ -1,5 +1,5 @@
 import React from "react";
-import { SkillCardContent, SkillCategory } from "../../../shared/types/Types";
+import { GroupedSkills } from "../../../shared/types/Types";
 import { SkillGroups } from "../../../shared/utils/Helper";
 import SkillCard from "../../../shared/components/SkillCard/SkillCard";
 import Section from "../../../shared/components/Section/Section";
@@ -8,11 +8,7 @@ import "./Skills.css";
 const Skills: React.FC = () => {
   const groupedSkills = SkillGroups;
   const skillCards = groupedSkills.map((group) => (
-    <SkillSection
-      key={group.category}
-      category={group.category}
-      skills={group.skills}
-    />
+    <SkillSection key={group.category} group={group} />
   ));
   return (
     <Section id="skills" title="Skills">
@@ -21,12 +17,9 @@ const Skills: React.FC = () => {
   );
 };
 
-type SkillSectionProps = {
-  category: SkillCategory;
-  skills: SkillCardContent[];
-};
+const SkillSection: React.FC<{ group: GroupedSkills }> = ({ group }) => {
+  const { category, skills } = group;
 
-const SkillSection: React.FC<SkillSectionProps> = ({ category, skills }) => {
   return (
     <div className="skill-field">
       <h2 className="skill-category">{category}</h2>
