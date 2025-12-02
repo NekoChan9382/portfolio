@@ -1,5 +1,6 @@
 import React from "react";
-import { CareerItemContent, careerList } from "../../../shared/data/Contents";
+import { CareerItemContent } from "../../../shared/types/Types";
+import { careerList } from "../../../shared/data/Contents";
 import Section from "../../../shared/components/Section/Section";
 import "./Career.css";
 

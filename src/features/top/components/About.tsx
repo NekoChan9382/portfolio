@@ -2,7 +2,7 @@ import React from "react";
 import Section from "../../../shared/components/Section/Section";
 import "./About.css";
 import { Link } from "react-router-dom";
-import { getBorderColor, getHoverColor } from "../../../shared/data/Contents";
+import { getBorderColor, getHoverColor } from "../../../shared/utils/Helper";
 import { motion } from "motion/react";
 
 const About: React.FC = () => {

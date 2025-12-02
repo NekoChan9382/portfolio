@@ -1,10 +1,7 @@
 import React from "react";
-import {
-  getBorderColor,
-  getHoverColor,
-  ProjectContent,
-  projectList,
-} from "../../../shared/data/Contents";
+import { ProjectContent } from "../../../shared/types/Types";
+import { projectList } from "../../../shared/data/Contents";
+import { getBorderColor, getHoverColor } from "../../../shared/utils/Helper";
 import Section from "../../../shared/components/Section/Section";
 import styles from "./ProjectList.module.css";
 import { Modal } from "@mui/material";

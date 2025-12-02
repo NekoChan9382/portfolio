@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import {
-  SkillType,
-  SkillCardContent,
-  getHoverColor,
-} from "../../../shared/data/Contents";
-import { SkillGroups } from "../../../shared/utils/SkillUtils";
+import { SkillCardContent, GroupedSkills } from "../../../shared/types/Types";
+import { SkillGroups, getHoverColor } from "../../../shared/utils/Helper";
 import { motion, AnimatePresence } from "motion/react";
 import SkillCard from "../../../shared/components/SkillCard/SkillCard";
 import Section from "../../../shared/components/Section/Section";
@@ -23,8 +19,7 @@ const SkillList: React.FC = () => {
   const Grids = groupedSkills.map((group) => (
     <GridItem
       key={group.category}
-      category={group.category}
-      skills={group.skills}
+      skillGroup={group}
       onSkillClick={OnSkillCardClick}
       selectedSkill={selectedSkill}
     />
@@ -38,23 +33,21 @@ const SkillList: React.FC = () => {
 };
 
 type GridItemProps = {
-  category: SkillType;
-  skills: SkillCardContent[];
+  skillGroup: GroupedSkills;
   onSkillClick: (skill: SkillCardContent) => void;
   selectedSkill: SkillCardContent | null;
 };
 
 const GridItem: React.FC<GridItemProps> = ({
-  category,
-  skills,
+  skillGroup,
   onSkillClick,
   selectedSkill,
 }) => {
   return (
     <div className={styles.gridItem}>
-      <h2 className={styles.skillCategory}>{category}</h2>
+      <h2 className={styles.skillCategory}>{skillGroup.category}</h2>
       <div className={styles.cards}>
-        {skills.map((skill) => (
+        {skillGroup.skills.map((skill) => (
           <motion.div
             key={skill.name}
             initial={{ y: 0 }}
@@ -75,7 +68,7 @@ const GridItem: React.FC<GridItemProps> = ({
         ))}
       </div>
       <AnimatePresence mode="sync">
-        {selectedSkill && selectedSkill.type === category && (
+        {selectedSkill && selectedSkill.type === skillGroup.category && (
           <motion.div
             key={selectedSkill.name}
             initial={{ opacity: 0, height: 0, y: -20 }}

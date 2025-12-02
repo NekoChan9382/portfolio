@@ -1,29 +1,16 @@
-import { useMediaQuery } from "react-responsive";
-
-export const SkillTypeList = {
-  Front: "Frontend",
-  Back: "Backend",
-  Dev: "Dev tools",
-  Robo: "Robotics",
-} as const;
-
-export type SkillType = (typeof SkillTypeList)[keyof typeof SkillTypeList];
-
-export type SkillCardContent = {
-  img: string;
-  name: string;
-  color: string;
-  type: SkillType;
-  about: string;
-  description?: string;
-};
+import {
+  SkillCategoryList,
+  ProjectContent,
+  CareerItemContent,
+  SkillCardContent,
+} from "../types/Types";
 
 export const skillList: SkillCardContent[] = [
   {
     img: "/assets/stack-icons/cplusplus.png",
     name: "C++",
     color: "#00599C",
-    type: SkillTypeList.Back,
+    type: SkillCategoryList.Back,
     about: "主にロボット制御プログラムの作成に使用",
     description: "ロボ部でのロボット制御に使用しています",
   },
@@ -31,7 +18,7 @@ export const skillList: SkillCardContent[] = [
     img: "/assets/stack-icons/python.png",
     name: "Python",
     color: "#3776AB",
-    type: SkillTypeList.Back,
+    type: SkillCategoryList.Back,
     about: "主にツール開発に使用",
     description:
       "ライブラリが充実しており、小さなツール作成などに気軽に使える言語として利用しています",
@@ -40,7 +27,7 @@ export const skillList: SkillCardContent[] = [
     img: "/assets/stack-icons/javascript.png",
     name: "JavaScript",
     color: "#F7DF1E",
-    type: SkillTypeList.Front,
+    type: SkillCategoryList.Front,
     about: "主にウェブ開発に使用",
     description:
       "動的コンテンツの作成、サーバーサイド開発(Node.js)などで利用しています",
@@ -49,7 +36,7 @@ export const skillList: SkillCardContent[] = [
     img: "/assets/stack-icons/typescript.png",
     name: "TypeScript",
     color: "#3178C6",
-    type: SkillTypeList.Front,
+    type: SkillCategoryList.Front,
     about: "主にウェブ開発に使用",
     description:
       "JavaScriptと比べて型安全性が高く、主にReact開発で好んで使用しています",
@@ -58,7 +45,7 @@ export const skillList: SkillCardContent[] = [
     img: "/assets/stack-icons/html5.png",
     name: "HTML",
     color: "#E34F26",
-    type: SkillTypeList.Front,
+    type: SkillCategoryList.Front,
     about: "主にウェブ開発に使用",
     description: "ウェブページの基本的な構造の作成に使用しています",
   },
@@ -66,7 +53,7 @@ export const skillList: SkillCardContent[] = [
     img: "/assets/stack-icons/css.png",
     name: "CSS",
     color: "#663399",
-    type: SkillTypeList.Front,
+    type: SkillCategoryList.Front,
     about: "主にウェブ開発に使用",
     description: "ウェブページのデザインやレイアウトの作成に使用しています",
   },
@@ -74,7 +61,7 @@ export const skillList: SkillCardContent[] = [
     img: "/assets/stack-icons/react.png",
     name: "React",
     color: "#61DAFB",
-    type: SkillTypeList.Front,
+    type: SkillCategoryList.Front,
     about: "主にウェブ開発に使用",
     description:
       "コンポーネントを用いたUI管理を行い、ウェブアプリケーションの開発に使用しています",
@@ -83,7 +70,7 @@ export const skillList: SkillCardContent[] = [
     img: "/assets/stack-icons/elixir.png",
     name: "Elixir",
     color: "#4B275F",
-    type: SkillTypeList.Back,
+    type: SkillCategoryList.Back,
     about: "主にツール開発に使用",
     description:
       "関数型言語の練習として使用し始めました。今後はNervesで組み込み開発にも挑戦する予定です",
@@ -92,7 +79,7 @@ export const skillList: SkillCardContent[] = [
     img: "/assets/stack-icons/git.png",
     name: "Git",
     color: "#F05032",
-    type: SkillTypeList.Dev,
+    type: SkillCategoryList.Dev,
     about: "主にバージョン管理に使用",
     description: "ソースコードのバージョン管理に使用しています",
   },
@@ -100,7 +87,7 @@ export const skillList: SkillCardContent[] = [
     img: "/assets/stack-icons/github.png",
     name: "GitHub",
     color: "#181717",
-    type: SkillTypeList.Dev,
+    type: SkillCategoryList.Dev,
     about: "主にバージョン管理に使用",
     description:
       "ソースコードのバージョン管理や、GitHub Actionsを用いたCI/CDに利用しています",
@@ -109,7 +96,7 @@ export const skillList: SkillCardContent[] = [
     img: "/assets/stack-icons/ros.png",
     name: "ROS2",
     color: "#22314E",
-    type: SkillTypeList.Robo,
+    type: SkillCategoryList.Robo,
     about: "主にロボット通信に使用",
     description:
       "ロボットとセンサー、コントローラーなどとの通信に使用しています",
@@ -118,7 +105,7 @@ export const skillList: SkillCardContent[] = [
   //   img: "/assets/stack-icons/mbed.png",
   //   name: "mbed",
   //   color: "#008FBE",
-  //   type: SkillTypeList.Robo,
+  //   type: SkillCategoryList.Robo,
   //   about: "主にマイコン制御に使用",
   //   description:
   //     "部のメインマイコンボードとして使用されている、STM32マイコンのプログラミングに使用しています",
@@ -127,7 +114,7 @@ export const skillList: SkillCardContent[] = [
   //   img: "/assets/stack-icons/arduino.png",
   //   name: "Arduino",
   //   color: "#00878F",
-  //   type: SkillTypeList.Robo,
+  //   type: SkillCategoryList.Robo,
   //   about: "主にマイコン制御に使用",
   //   description:
   //     "部のサブマイコンボードとして使用されている、ArduinoやESP32のプログラミングに使用しています",
@@ -136,7 +123,7 @@ export const skillList: SkillCardContent[] = [
     img: "/assets/stack-icons/vscode.svg",
     name: "VSCode",
     color: "#007ACC",
-    type: SkillTypeList.Dev,
+    type: SkillCategoryList.Dev,
     about: "主にコード編集に使用",
     description:
       "多くの言語に対応しており、拡張機能も豊富なため、主にコード編集に使用しています",
@@ -145,23 +132,12 @@ export const skillList: SkillCardContent[] = [
     img: "/assets/stack-icons/nodedotjs.png",
     name: "Node.js",
     color: "#5FA04E",
-    type: SkillTypeList.Back,
+    type: SkillCategoryList.Back,
     about: "主にサーバーサイドAPI開発、ビルドツールとして使用",
     description:
       "Webサーバーの構築や、ウェブアプリケーションのビルドに使用しています",
   },
 ];
-
-export type ProjectContent = {
-  id: string;
-  name: string;
-  about: string;
-  description?: string;
-  link: string;
-  thumbnail: string;
-  imgs?: string[];
-  techs: string[];
-};
 
 export const projectList: ProjectContent[] = [
   {
@@ -221,12 +197,6 @@ export const projectList: ProjectContent[] = [
   },
 ];
 
-export type CareerItemContent = {
-  date: string;
-  title: string;
-  description: string;
-};
-
 export const careerList: CareerItemContent[] = [
   {
     date: "2024.04",
@@ -259,18 +229,3 @@ export const careerList: CareerItemContent[] = [
     description: "Bチーム操縦を担当 田中貴金属グループ賞受賞",
   },
 ];
-
-export const getCSSVariable = (variableName: string): string => {
-  return getComputedStyle(document.documentElement)
-    .getPropertyValue(variableName)
-    .trim();
-};
-
-export const getBorderColor = () => getCSSVariable("--border-color");
-export const getHoverColor = () => getCSSVariable("--hover-color");
-
-const mobileWidth: number = 768;
-
-export const useIsMobile = (): boolean => {
-  return useMediaQuery({ query: `(max-width: ${mobileWidth}px)` });
-};
