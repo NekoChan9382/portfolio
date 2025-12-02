@@ -7,8 +7,8 @@ import "./Skills.css";
 
 const Skills: React.FC = () => {
   const groupedSkills = SkillGroups;
-  const skillCards = groupedSkills.map((group) => (
-    <SkillSection key={group.category} group={group} />
+  const skillCards = groupedSkills.map((skillGroup) => (
+    <SkillSection key={skillGroup.category} skillGroup={skillGroup} />
   ));
   return (
     <Section id="skills" title="Skills">
@@ -17,8 +17,10 @@ const Skills: React.FC = () => {
   );
 };
 
-const SkillSection: React.FC<{ group: GroupedSkills }> = ({ group }) => {
-  const { category, skills } = group;
+const SkillSection: React.FC<{ skillGroup: GroupedSkills }> = ({
+  skillGroup,
+}) => {
+  const { category, skills } = skillGroup;
 
   return (
     <div className="skill-field">

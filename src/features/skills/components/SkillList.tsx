@@ -19,7 +19,7 @@ const SkillList: React.FC = () => {
   const Grids = groupedSkills.map((group) => (
     <GridItem
       key={group.category}
-      skills={group}
+      skillGroup={group}
       onSkillClick={OnSkillCardClick}
       selectedSkill={selectedSkill}
     />
@@ -33,21 +33,21 @@ const SkillList: React.FC = () => {
 };
 
 type GridItemProps = {
-  skills: GroupedSkills;
+  skillGroup: GroupedSkills;
   onSkillClick: (skill: SkillCardContent) => void;
   selectedSkill: SkillCardContent | null;
 };
 
 const GridItem: React.FC<GridItemProps> = ({
-  skills,
+  skillGroup,
   onSkillClick,
   selectedSkill,
 }) => {
   return (
     <div className={styles.gridItem}>
-      <h2 className={styles.skillCategory}>{skills.category}</h2>
+      <h2 className={styles.skillCategory}>{skillGroup.category}</h2>
       <div className={styles.cards}>
-        {skills.skills.map((skill) => (
+        {skillGroup.skills.map((skill) => (
           <motion.div
             key={skill.name}
             initial={{ y: 0 }}
@@ -68,7 +68,7 @@ const GridItem: React.FC<GridItemProps> = ({
         ))}
       </div>
       <AnimatePresence mode="sync">
-        {selectedSkill && selectedSkill.type === skills.category && (
+        {selectedSkill && selectedSkill.type === skillGroup.category && (
           <motion.div
             key={selectedSkill.name}
             initial={{ opacity: 0, height: 0, y: -20 }}
