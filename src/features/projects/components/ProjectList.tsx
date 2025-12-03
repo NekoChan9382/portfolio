@@ -39,13 +39,23 @@ const ProjectCard: React.FC<{ content: ProjectContent }> = ({ content }) => {
             ))}
           </div>
         </div>
-        <div className={styles.projectLink}>
+        <motion.div
+          className={styles.projectLink}
+          initial={{
+            borderColor: getBorderColor(),
+          }}
+          whileHover={{
+            borderColor: getHoverColor(),
+            boxShadow: `0 0 20px ${getHoverColor()}40`,
+          }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        >
           {link && (
             <a href={link} target="_blank" rel="noopener noreferrer">
               View Project
             </a>
           )}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
