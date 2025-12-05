@@ -6,11 +6,10 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import { Popper } from "@mui/material";
 import { Link } from "react-router-dom";
-import { getBorderColor, getHoverColor } from "../../../shared/utils/Helper";
+import { hoverVariants } from "../../../shared/animations";
+import { easeOutTransition } from "../../../shared/animations";
 
 const TopPage: React.FC = () => {
-  const borderColor = getBorderColor();
-  const hoverColor = getHoverColor();
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
   const skillSectionRef = React.useRef<HTMLDivElement>(null);
 
@@ -35,14 +34,10 @@ const TopPage: React.FC = () => {
           ref={skillSectionRef}
           className="section"
           id="section-skills"
-          initial={{
-            borderColor: borderColor,
-          }}
-          whileHover={{
-            borderColor: hoverColor,
-            boxShadow: `0 0 20px ${hoverColor}40`,
-          }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          variants={hoverVariants}
+          initial="initial"
+          whileHover="hover"
+          transition={easeOutTransition}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >

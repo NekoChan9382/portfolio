@@ -2,12 +2,11 @@ import React from "react";
 import Section from "../../../shared/components/Section/Section";
 import "./About.css";
 import { Link } from "react-router-dom";
-import { getBorderColor, getHoverColor } from "../../../shared/utils/Helper";
+import { hoverVariants } from "../../../shared/animations";
+import { easeOutTransition } from "../../../shared/animations";
 import { motion } from "motion/react";
 
 const About: React.FC = () => {
-  const borderColor = getBorderColor();
-  const hoverColor = getHoverColor();
   return (
     <Section id="about">
       <div className="greeting">
@@ -25,14 +24,10 @@ const About: React.FC = () => {
             <motion.div
               className="about-link-btn"
               role="button"
-              initial={{
-                borderColor: borderColor,
-              }}
-              whileHover={{
-                borderColor: hoverColor,
-                boxShadow: `0 0 20px ${hoverColor}40`,
-              }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              variants={hoverVariants}
+              initial="initial"
+              whileHover="hover"
+              transition={easeOutTransition}
             >
               View Profile
             </motion.div>

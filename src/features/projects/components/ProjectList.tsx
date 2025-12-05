@@ -1,13 +1,21 @@
 import React from "react";
 import { ProjectContent } from "../../../shared/types/Types";
 import { projectList } from "../../../shared/data/Contents";
-import { getBorderColor, getHoverColor } from "../../../shared/utils/Helper";
 import Section from "../../../shared/components/Section/Section";
 import styles from "./ProjectList.module.css";
 import { Modal } from "@mui/material";
 import { motion, AnimatePresence } from "motion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  hoverVariants,
+  slideVariants,
+  pageArrowVariants,
+} from "../../../shared/animations";
+import {
+  easeInOutTransition,
+  easeOutTransition,
+} from "../../../shared/animations";
 
 const ProjectList: React.FC = () => {
   const cards = projectList.map((p) => (
@@ -41,14 +49,10 @@ const ProjectCard: React.FC<{ content: ProjectContent }> = ({ content }) => {
         </div>
         <motion.div
           className={styles.projectLink}
-          initial={{
-            borderColor: getBorderColor(),
-          }}
-          whileHover={{
-            borderColor: getHoverColor(),
-            boxShadow: `0 0 20px ${getHoverColor()}40`,
-          }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          variants={hoverVariants}
+          initial="initial"
+          whileHover="hover"
+          transition={easeOutTransition}
         >
           {link && (
             <a href={link} target="_blank" rel="noopener noreferrer">
@@ -65,41 +69,12 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
   const [selectedImgIndex, setSelectedImgIndex] = React.useState<number>(0);
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
   const direction = React.useRef<number>(0);
-  const hoverColor = getHoverColor();
-  const borderColor = getBorderColor();
 
   const paginate = (newDirection: number) => {
     direction.current = newDirection;
     setSelectedImgIndex(
       (prevIndex) => (prevIndex + newDirection + imgs.length) % imgs.length
     );
-  };
-
-  const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 300 : -300,
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: (direction: number) => ({
-      x: direction < 0 ? 300 : -300,
-      opacity: 0,
-    }),
-  };
-
-  const pageArrowVariants = {
-    initial: {
-      color: "black",
-      borderColor: borderColor,
-    },
-    hover: {
-      color: hoverColor,
-      borderColor: hoverColor,
-      boxShadow: `0 0 20px ${hoverColor}40`,
-    },
   };
 
   return (
@@ -149,7 +124,7 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
                   variants={pageArrowVariants}
                   initial="initial"
                   whileHover="hover"
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  transition={easeInOutTransition}
                   aria-label="Previous Image"
                 >
                   <FontAwesomeIcon icon={faCaretLeft} />
@@ -171,7 +146,7 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
                       initial="enter"
                       animate="center"
                       exit="exit"
-                      transition={{ ease: "easeOut", duration: 0.3 }}
+                      transition={easeOutTransition}
                     />
                   </AnimatePresence>
                 </div>
@@ -182,7 +157,7 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
                   variants={pageArrowVariants}
                   initial="initial"
                   whileHover="hover"
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  transition={easeInOutTransition}
                   aria-label="Next Image"
                 >
                   <FontAwesomeIcon icon={faCaretRight} />

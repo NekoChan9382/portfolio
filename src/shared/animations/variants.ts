@@ -12,6 +12,17 @@ export const hoverVariants: Variants = {
   },
 };
 
+// スキルカード用ホバーエフェクト（上に移動）
+export const skillCardHoverVariants: Variants = {
+  initial: {
+    y: 0,
+  },
+  hover: {
+    y: -10,
+    color: getHoverColor(),
+  },
+};
+
 // スライドアニメーション（モーダル画像切り替え用）
 export const slideVariants: Variants = {
   enter: (direction: number) => ({
