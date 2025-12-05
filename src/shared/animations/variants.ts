@@ -1,5 +1,9 @@
 import { Variants } from "motion/react";
-import { getBorderColor, getHoverColor } from "../utils/Helper";
+import {
+  getBorderColor,
+  getHoverColor,
+  getSelectedColor,
+} from "../utils/Helper";
 
 // ボーダーホバーエフェクト（ボタン・カード用）
 export const hoverVariants: Variants = {
@@ -9,6 +13,9 @@ export const hoverVariants: Variants = {
   hover: {
     borderColor: getHoverColor(),
     boxShadow: `0 0 20px ${getHoverColor()}40`,
+  },
+  selected: {
+    borderColor: getSelectedColor(),
   },
 };
 

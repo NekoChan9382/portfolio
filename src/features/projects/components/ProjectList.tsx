@@ -97,20 +97,28 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
           )}
         </div>
         <div className={styles.thumbnailContainer}>
-          {imgs.map((img, index) => (
-            <button
-              key={index}
-              className={`${styles.projectImage} ${
-                selectedImgIndex === index ? styles.selected : ""
-              }`}
-              onClick={() => setSelectedImgIndex(index)}
-            >
-              <img
-                src={`${process.env.PUBLIC_URL}${img}`}
-                alt={`Project screenshot ${index + 1}`}
-              />
-            </button>
-          ))}
+          {imgs.map((img, index) => {
+            const isSelected = index === selectedImgIndex;
+            return (
+              <motion.button
+                key={index}
+                variants={hoverVariants}
+                initial="initial"
+                animate={isSelected ? "selected" : "initial"}
+                whileHover="hover"
+                transition={easeOutTransition}
+                className={`${styles.projectImage} ${
+                  isSelected ? styles.selected : ""
+                }`}
+                onClick={() => setSelectedImgIndex(index)}
+              >
+                <img
+                  src={`${process.env.PUBLIC_URL}${img}`}
+                  alt={`Project screenshot ${index + 1}`}
+                />
+              </motion.button>
+            );
+          })}
         </div>
       </div>
       <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)}>

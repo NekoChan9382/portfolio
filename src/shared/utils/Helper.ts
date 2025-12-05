@@ -15,5 +15,6 @@ export const getCSSVariable = (variableName: string): string => {
 
 export const getBorderColor = () => getCSSVariable("--border-color");
 export const getHoverColor = () => getCSSVariable("--hover-color");
+export const getSelectedColor = () => getCSSVariable("--selected-color");
 
 export const mobileWidth: number = 768;
