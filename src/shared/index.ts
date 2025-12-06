@@ -13,3 +13,7 @@ export * from "./data/Contents";
 
 // Utils
 export * from "./utils/Helper";
+
+// Animations
+export * from "./animations/transitions";
+export * from "./animations/variants";

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { SkillCardContent, GroupedSkills } from "../../../shared/types/Types";
-import { SkillGroups, getHoverColor } from "../../../shared/utils/Helper";
+import { SkillGroups } from "../../../shared/utils/Helper";
 import { motion, AnimatePresence } from "motion/react";
 import SkillCard from "../../../shared/components/SkillCard/SkillCard";
 import Section from "../../../shared/components/Section/Section";
 import styles from "./SkillList.module.css";
+import { skillCardHoverVariants } from "../../../shared/animations";
+import { easeInOutTransition } from "../../../shared/animations";
 
 const SkillList: React.FC = () => {
   const groupedSkills = SkillGroups;
@@ -50,9 +52,10 @@ const GridItem: React.FC<GridItemProps> = ({
         {skillGroup.skills.map((skill) => (
           <motion.div
             key={skill.name}
-            initial={{ y: 0 }}
-            whileHover={{ y: -10, color: getHoverColor() }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
+            variants={skillCardHoverVariants}
+            initial="initial"
+            whileHover="hover"
+            transition={easeInOutTransition}
           >
             <SkillCard
               skill={skill}

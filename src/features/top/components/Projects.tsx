@@ -3,7 +3,8 @@ import { motion } from "motion/react";
 import { ProjectContent } from "../../../shared/types/Types";
 import { projectList } from "../../../shared/data/Contents";
 import Section from "../../../shared/components/Section/Section";
-import { getBorderColor, getHoverColor } from "../../../shared/utils/Helper";
+import { hoverVariants } from "../../../shared/animations";
+import { easeOutTransition } from "../../../shared/animations";
 import { Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./Projects.css";
@@ -22,8 +23,6 @@ const Projects: React.FC = () => {
 type ProjectCardProps = { content: ProjectContent };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
-  const borderColor = getBorderColor();
-  const hoverColor = getHoverColor();
   const { id, name, about, thumbnail, techs } = content;
   const techSpan = techs.map((tech) => {
     return (
@@ -37,14 +36,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
       <Tooltip title="Click to view project" arrow>
         <motion.div
           className="project-card"
-          initial={{
-            borderColor: borderColor,
-          }}
-          whileHover={{
-            borderColor: hoverColor,
-            boxShadow: `0 0 20px ${hoverColor}40`,
-          }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          variants={hoverVariants}
+          initial="initial"
+          whileHover="hover"
+          transition={easeOutTransition}
         >
           <div className="project-image">
             <img
