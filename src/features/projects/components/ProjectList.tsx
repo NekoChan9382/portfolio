@@ -3,7 +3,7 @@ import { ProjectContent } from "../../../shared/types/Types";
 import { projectList } from "../../../shared/data/Contents";
 import Section from "../../../shared/components/Section/Section";
 import styles from "./ProjectList.module.css";
-import { Modal } from "@mui/material";
+import { Modal, Tooltip } from "@mui/material";
 import { motion, AnimatePresence } from "motion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
@@ -80,22 +80,30 @@ const Images: React.FC<{ imgs: string[] }> = ({ imgs }) => {
   return (
     <>
       <div className={styles.projectImages}>
-        <div className={styles.mainImage}>
+        <motion.div
+          className={styles.mainImage}
+          variants={hoverVariants}
+          initial="initial"
+          whileHover="hover"
+          transition={easeOutTransition}
+        >
           {imgs.length > 0 && (
-            <img
-              src={`${process.env.PUBLIC_URL}${imgs[selectedImgIndex]}`}
-              alt="Project main"
-              onClick={() => setIsModalOpen(true)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  setIsModalOpen(true);
-                }
-              }}
-            />
+            <Tooltip title="Click to view" arrow>
+              <img
+                src={`${process.env.PUBLIC_URL}${imgs[selectedImgIndex]}`}
+                alt="Project main"
+                onClick={() => setIsModalOpen(true)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    setIsModalOpen(true);
+                  }
+                }}
+              />
+            </Tooltip>
           )}
-        </div>
+        </motion.div>
         <div className={styles.thumbnailContainer}>
           {imgs.map((img, index) => {
             const isSelected = index === selectedImgIndex;
