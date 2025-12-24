@@ -228,4 +228,9 @@ export const careerList: CareerItemContent[] = [
     title: "高専ロボコン2025 出場",
     description: "Bチーム操縦を担当 田中貴金属グループ賞受賞",
   },
+  {
+    date: "2025.12",
+    title: "第10回 廃炉創造ロボコン 出場",
+    description: "ピットメンバーとして出場 三菱重工業賞受賞",
+  },
 ];
