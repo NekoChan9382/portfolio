@@ -195,6 +195,17 @@ export const projectList: ProjectContent[] = [
     imgs: ["/assets/project-screenshots/portfolio-1.png"],
     techs: ["React", "TypeScript", "CSS", "GitHub"],
   },
+  {
+    id: "leafgit",
+    name: "LeafGit",
+    about: "初学者向けのGit/GitHub操作のGUIツール",
+    description:
+      "CLI ベースの操作に慣れていない初学者を対象とした、Git/GitHub 操作のための GUI アプリケーションです。 Git、GitHub、CLI 操作への理解と移行を支援することを目的としています。",
+    link: "https://github.com/NekoChan9382/leafgit",
+    thumbnail: "/assets/leafgit.png",
+    imgs: ["/assets/project-screenshots/leafgit-1.png"],
+    techs: ["Python", "Git", "GitHub"],
+  },
 ];
 
 export const careerList: CareerItemContent[] = [
