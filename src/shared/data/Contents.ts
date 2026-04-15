@@ -15,6 +15,14 @@ export const skillList: SkillCardContent[] = [
     description: "ロボ部でのロボット制御に使用しています",
   },
   {
+    img: "/assets/stack-icons/c.png",
+    name: "C",
+    color: "#A8B9CC",
+    type: SkillCategoryList.Back,
+    about: "主にロボット制御プログラムの作成に使用",
+    description: "ロボ部での低レイヤー制御やライブラリ作成に使用しています",
+  },
+  {
     img: "/assets/stack-icons/python.png",
     name: "Python",
     color: "#3776AB",
@@ -206,6 +214,17 @@ export const projectList: ProjectContent[] = [
     imgs: ["/assets/project-screenshots/leafgit-1.png"],
     techs: ["Python", "Git", "GitHub"],
   },
+  // {
+  //   id: "omuraisu",
+  //   name: "omuraisu-library",
+  //   about: "ロボット制御用のC/C++ライブラリ",
+  //   description:
+  //     "CANやPID操作など、ロボット制御で使用する機能を提供するライブラリです。C17, C++17でそれぞれ実装されています。",
+  //   link: "https://github.com/omuct-robotclub/omuraisu-library",
+  //   thumbnail: "/assets/omuraisu-library.png",
+  //   imgs: ["/assets/project-screenshots/omuraisu-library-1.png"],
+  //   techs: ["C", "C++"],
+  // },
 ];
 
 export const careerList: CareerItemContent[] = [
@@ -243,5 +262,15 @@ export const careerList: CareerItemContent[] = [
     date: "2025.12",
     title: "第10回 廃炉創造ロボコン 出場",
     description: "ピットメンバーとして出場 三菱重工業賞受賞",
+  },
+  {
+    date: "2026.03",
+    title: "関西春ロボコン2026 出場",
+    description: "まんじチーム操縦を担当 決勝トーナメント進出 <3",
+  },
+  {
+    date: "2026.04",
+    title: "知能情報コース 3年次進級",
+    description: "進級できました",
   },
 ];
