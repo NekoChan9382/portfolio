@@ -5,6 +5,15 @@ import {
   SkillCardContent,
 } from "../types/Types";
 
+export const profileContent = {
+  name: "bit",
+  description: [
+    "大阪公大高専3年生のbitです。組み込みやWeb開発を行っています。",
+    "最近はWebデザインに興味があったりするかも",
+  ],
+  image: "/assets/kanibaPigeon.jpg",
+};
+
 export const skillList: SkillCardContent[] = [
   {
     img: "/assets/stack-icons/cplusplus.png",
