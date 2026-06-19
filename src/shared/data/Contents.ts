@@ -223,17 +223,17 @@ export const projectList: ProjectContent[] = [
     imgs: ["/assets/project-screenshots/leafgit-1.png"],
     techs: ["Python", "Git", "GitHub"],
   },
-  // {
-  //   id: "omuraisu",
-  //   name: "omuraisu-library",
-  //   about: "ロボット制御用のC/C++ライブラリ",
-  //   description:
-  //     "CANやPID操作など、ロボット制御で使用する機能を提供するライブラリです。C17, C++17でそれぞれ実装されています。",
-  //   link: "https://github.com/omuct-robotclub/omuraisu-library",
-  //   thumbnail: "/assets/omuraisu-library.png",
-  //   imgs: ["/assets/project-screenshots/omuraisu-library-1.png"],
-  //   techs: ["C", "C++"],
-  // },
+  {
+    id: "omuraisu",
+    name: "omuraisu-library",
+    about: "ロボット制御用のC/C++ライブラリ",
+    description:
+      "CANやPID操作など、ロボット制御で使用する機能を提供するライブラリです。C11, C++17でそれぞれ実装されています。",
+    link: "https://github.com/omuct-robotclub/omuraisu-library",
+    thumbnail: "/assets/omuraisu-library.png",
+    imgs: ["/assets/project-screenshots/omuraisu-library-1.png"],
+    techs: ["C", "C++"],
+  },
 ];
 
 export const careerList: CareerItemContent[] = [
