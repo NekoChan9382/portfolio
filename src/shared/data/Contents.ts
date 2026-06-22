@@ -32,6 +32,14 @@ export const skillList: SkillCardContent[] = [
     description: "ロボ部での低レイヤー制御やライブラリ作成に使用しています",
   },
   {
+    img: "/assets/stack-icons/cmake.svg",
+    name: "CMake",
+    color: "#064F8C",
+    type: SkillCategoryList.Back,
+    about: "主にC/C++ビルドシステムに使用",
+    description: "プロジェクトのビルドプロセスを管理するために使用しています",
+  },
+  {
     img: "/assets/stack-icons/python.png",
     name: "Python",
     color: "#3776AB",
@@ -153,6 +161,23 @@ export const skillList: SkillCardContent[] = [
     about: "主にサーバーサイドAPI開発、ビルドツールとして使用",
     description:
       "Webサーバーの構築や、ウェブアプリケーションのビルドに使用しています",
+  },
+  {
+    img: "/assets/stack-icons/rust.svg",
+    name: "Rust",
+    color: "#000000",
+    type: SkillCategoryList.Back,
+    about: "主にツール開発に使用",
+    description: "特有のシステムによる高い安全性に興味を持ち、勉強しています",
+  },
+  {
+    img: "/assets/stack-icons/vim.svg",
+    name: "Vim",
+    color: "#019733",
+    type: SkillCategoryList.Dev,
+    about: "コード編集に使用",
+    description:
+      "CUI上でのコード編集で使用しています。NeoVimを使用しており、Luaでのカスタマイズを行っています",
   },
 ];
 
