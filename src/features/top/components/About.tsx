@@ -45,7 +45,7 @@ const About: React.FC = () => {
                   className="account-link"
                 >
                   <img
-                    src={`${process.env.PUBLIC_URL}${account.icon}`}
+                    src={`${process.env.PUBLIC_URL}${account.icon}`} alt={account.name}
                   />
                 </a>
               ))}
