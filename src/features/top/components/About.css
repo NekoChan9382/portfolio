@@ -22,9 +22,26 @@
   object-fit: cover;
 }
 
+.about-links {
+  display: flex;
+  margin-top: 20px;
+  height: 43px;
+}
+
+.accounts {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 20px;
+}
+
+.account-link {
+  height: 75%;
+  aspect-ratio: 1;
+}
+
 .about-link-btn {
   border: var(--border-width) solid;
-  margin-top: 20px;
   border-radius: 10px;
   width: fit-content;
   padding: 10px;

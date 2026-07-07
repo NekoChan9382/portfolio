@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SkillCardContent, GroupedSkills } from "../../../shared/types/Types";
+import { SkillCardContent, GroupedSkills, SkillLevel } from "../../../shared/types/Types";
 import { SkillGroups } from "../../../shared/utils/Helper";
 import { motion, AnimatePresence } from "motion/react";
 import SkillCard from "../../../shared/components/SkillCard/SkillCard";
@@ -7,6 +7,9 @@ import Section from "../../../shared/components/Section/Section";
 import styles from "./SkillList.module.css";
 import { skillCardHoverVariants } from "../../../shared/animations";
 import { easeInOutTransition } from "../../../shared/animations";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
+import { faStar as faStarRegular } from "@fortawesome/free-regular-svg-icons";
 
 const SkillList: React.FC = () => {
   const groupedSkills = SkillGroups;
@@ -60,9 +63,8 @@ const GridItem: React.FC<GridItemProps> = ({
             <SkillCard
               skill={skill}
               showName={true}
-              className={`${styles.skillCard} ${
-                selectedSkill?.name === skill.name ? styles.selected : ""
-              }`}
+              className={`${styles.skillCard} ${selectedSkill?.name === skill.name ? styles.selected : ""
+                }`}
               imgClassName={styles.skillImg}
               nameClassName={styles.skillName}
               onClick={() => onSkillClick(skill)}
@@ -89,7 +91,7 @@ const GridItem: React.FC<GridItemProps> = ({
 };
 
 const DetailCard: React.FC<{ skill: SkillCardContent }> = ({ skill }) => {
-  const { name, about, description } = skill;
+  const { name, about, description, level } = skill;
   return (
     <div className={styles.detailCard}>
       <div className={styles.detailTitle}>
@@ -100,12 +102,17 @@ const DetailCard: React.FC<{ skill: SkillCardContent }> = ({ skill }) => {
         />
         <div className={styles.detailName}>{name}</div>
       </div>
+      <div className={styles.detailLevel}><p>習熟度: </p><SkillLevelIcon level={level} /></div>
       <div className={styles.detailAbout}>
         <h4>{about}</h4>
         <p>{description}</p>
       </div>
     </div>
   );
+};
+
+const SkillLevelIcon: React.FC<{ level: SkillLevel }> = ({ level }) => {
+  return (<div>{level === 1 && (<><FontAwesomeIcon icon={faStarSolid} /><FontAwesomeIcon icon={faStarRegular} /><FontAwesomeIcon icon={faStarRegular} /></>)}{level === 2 && (<><FontAwesomeIcon icon={faStarSolid} /><FontAwesomeIcon icon={faStarSolid} /><FontAwesomeIcon icon={faStarRegular} /></>)}{level === 3 && (<><FontAwesomeIcon icon={faStarSolid} /><FontAwesomeIcon icon={faStarSolid} /><FontAwesomeIcon icon={faStarSolid} /></>)}</div>);
 };
 
 export default SkillList;

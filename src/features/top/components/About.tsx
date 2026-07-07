@@ -22,18 +22,35 @@ const About: React.FC = () => {
           {profileContent.description.map((desc, index) => (
             <p key={index}>{desc}</p>
           ))}
-          <Link to="/about">
-            <motion.div
-              className="about-link-btn"
-              role="button"
-              variants={hoverVariants}
-              initial="initial"
-              whileHover="hover"
-              transition={easeOutTransition}
-            >
-              View Profile
-            </motion.div>
-          </Link>
+          <div className="about-links">
+            <Link to="/about">
+              <motion.div
+                className="about-link-btn"
+                role="button"
+                variants={hoverVariants}
+                initial="initial"
+                whileHover="hover"
+                transition={easeOutTransition}
+              >
+                View Profile
+              </motion.div>
+            </Link>
+            <div className="accounts">
+              {profileContent.accounts.map((account, index) => (
+                <a
+                  key={index}
+                  href={account.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="account-link"
+                >
+                  <img
+                    src={`${process.env.PUBLIC_URL}${account.icon}`}
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </Section>
