@@ -3,7 +3,24 @@ import {
   ProjectContent,
   CareerItemContent,
   SkillCardContent,
+  LinkItem,
 } from "../types/Types";
+
+export const profileContent = {
+  name: "bit",
+  description: [
+    "大阪公大高専3年生のbitです。組み込みやWeb開発を行っています。",
+    "最近はWebデザインに興味があったりするかも",
+  ],
+  image: "/assets/kanibaPigeon.jpg",
+  accounts: [
+    {
+      name: "GitHub",
+      url: "https://github.com/NekoChan9382",
+      icon: "/assets/stack-icons/github.svg",
+    } satisfies LinkItem,
+  ],
+};
 
 export const skillList: SkillCardContent[] = [
   {
@@ -11,6 +28,7 @@ export const skillList: SkillCardContent[] = [
     name: "C++",
     color: "#00599C",
     type: SkillCategoryList.Back,
+    level: 3,
     about: "主にロボット制御プログラムの作成に使用",
     description: "ロボ部でのロボット制御に使用しています",
   },
@@ -19,14 +37,25 @@ export const skillList: SkillCardContent[] = [
     name: "C",
     color: "#A8B9CC",
     type: SkillCategoryList.Back,
+    level: 2,
     about: "主にロボット制御プログラムの作成に使用",
     description: "ロボ部での低レイヤー制御やライブラリ作成に使用しています",
+  },
+  {
+    img: "/assets/stack-icons/cmake.svg",
+    name: "CMake",
+    color: "#064F8C",
+    type: SkillCategoryList.Back,
+    level: 1,
+    about: "主にC/C++ビルドシステムに使用",
+    description: "プロジェクトのビルドプロセスを管理するために使用しています",
   },
   {
     img: "/assets/stack-icons/python.png",
     name: "Python",
     color: "#3776AB",
     type: SkillCategoryList.Back,
+    level: 2,
     about: "主にツール開発に使用",
     description:
       "ライブラリが充実しており、小さなツール作成などに気軽に使える言語として利用しています",
@@ -36,6 +65,7 @@ export const skillList: SkillCardContent[] = [
     name: "JavaScript",
     color: "#F7DF1E",
     type: SkillCategoryList.Front,
+    level: 3,
     about: "主にウェブ開発に使用",
     description:
       "動的コンテンツの作成、サーバーサイド開発(Node.js)などで利用しています",
@@ -45,6 +75,7 @@ export const skillList: SkillCardContent[] = [
     name: "TypeScript",
     color: "#3178C6",
     type: SkillCategoryList.Front,
+    level: 3,
     about: "主にウェブ開発に使用",
     description:
       "JavaScriptと比べて型安全性が高く、主にReact開発で好んで使用しています",
@@ -54,6 +85,7 @@ export const skillList: SkillCardContent[] = [
     name: "HTML",
     color: "#E34F26",
     type: SkillCategoryList.Front,
+    level: 3,
     about: "主にウェブ開発に使用",
     description: "ウェブページの基本的な構造の作成に使用しています",
   },
@@ -62,6 +94,7 @@ export const skillList: SkillCardContent[] = [
     name: "CSS",
     color: "#663399",
     type: SkillCategoryList.Front,
+    level: 2,
     about: "主にウェブ開発に使用",
     description: "ウェブページのデザインやレイアウトの作成に使用しています",
   },
@@ -70,6 +103,7 @@ export const skillList: SkillCardContent[] = [
     name: "React",
     color: "#61DAFB",
     type: SkillCategoryList.Front,
+    level: 2,
     about: "主にウェブ開発に使用",
     description:
       "コンポーネントを用いたUI管理を行い、ウェブアプリケーションの開発に使用しています",
@@ -79,6 +113,7 @@ export const skillList: SkillCardContent[] = [
     name: "Elixir",
     color: "#4B275F",
     type: SkillCategoryList.Back,
+    level: 1,
     about: "主にツール開発に使用",
     description:
       "関数型言語の練習として使用し始めました。今後はNervesで組み込み開発にも挑戦する予定です",
@@ -88,14 +123,16 @@ export const skillList: SkillCardContent[] = [
     name: "Git",
     color: "#F05032",
     type: SkillCategoryList.Dev,
+    level: 3,
     about: "主にバージョン管理に使用",
     description: "ソースコードのバージョン管理に使用しています",
   },
   {
-    img: "/assets/stack-icons/github.png",
+    img: "/assets/stack-icons/github.svg",
     name: "GitHub",
     color: "#181717",
     type: SkillCategoryList.Dev,
+    level: 3,
     about: "主にバージョン管理に使用",
     description:
       "ソースコードのバージョン管理や、GitHub Actionsを用いたCI/CDに利用しています",
@@ -105,6 +142,7 @@ export const skillList: SkillCardContent[] = [
     name: "ROS2",
     color: "#22314E",
     type: SkillCategoryList.Robo,
+    level: 2,
     about: "主にロボット通信に使用",
     description:
       "ロボットとセンサー、コントローラーなどとの通信に使用しています",
@@ -132,6 +170,7 @@ export const skillList: SkillCardContent[] = [
     name: "VSCode",
     color: "#007ACC",
     type: SkillCategoryList.Dev,
+    level: 3,
     about: "主にコード編集に使用",
     description:
       "多くの言語に対応しており、拡張機能も豊富なため、主にコード編集に使用しています",
@@ -141,9 +180,29 @@ export const skillList: SkillCardContent[] = [
     name: "Node.js",
     color: "#5FA04E",
     type: SkillCategoryList.Back,
+    level: 1,
     about: "主にサーバーサイドAPI開発、ビルドツールとして使用",
     description:
       "Webサーバーの構築や、ウェブアプリケーションのビルドに使用しています",
+  },
+  {
+    img: "/assets/stack-icons/rust.svg",
+    name: "Rust",
+    color: "#000000",
+    type: SkillCategoryList.Back,
+    level: 1,
+    about: "主にツール開発に使用",
+    description: "特有のシステムによる高い安全性に興味を持ち、勉強しています",
+  },
+  {
+    img: "/assets/stack-icons/vim.svg",
+    name: "Vim",
+    color: "#019733",
+    type: SkillCategoryList.Dev,
+    level: 2,
+    about: "コード編集に使用",
+    description:
+      "CUI上でのコード編集で使用しています。NeoVimを使用しており、Luaでのカスタマイズを行っています",
   },
 ];
 
@@ -214,17 +273,17 @@ export const projectList: ProjectContent[] = [
     imgs: ["/assets/project-screenshots/leafgit-1.png"],
     techs: ["Python", "Git", "GitHub"],
   },
-  // {
-  //   id: "omuraisu",
-  //   name: "omuraisu-library",
-  //   about: "ロボット制御用のC/C++ライブラリ",
-  //   description:
-  //     "CANやPID操作など、ロボット制御で使用する機能を提供するライブラリです。C17, C++17でそれぞれ実装されています。",
-  //   link: "https://github.com/omuct-robotclub/omuraisu-library",
-  //   thumbnail: "/assets/omuraisu-library.png",
-  //   imgs: ["/assets/project-screenshots/omuraisu-library-1.png"],
-  //   techs: ["C", "C++"],
-  // },
+  {
+    id: "omuraisu",
+    name: "omuraisu-library",
+    about: "ロボット制御用のC/C++ライブラリ",
+    description:
+      "CANやPID操作など、ロボット制御で使用する機能を提供するライブラリです。C11, C++17でそれぞれ実装されています。",
+    link: "https://github.com/omuct-robotclub/omuraisu-library",
+    thumbnail: "/assets/omuraisu-library.png",
+    imgs: ["/assets/project-screenshots/omuraisu-library-1.png"],
+    techs: ["C", "C++"],
+  },
 ];
 
 export const careerList: CareerItemContent[] = [
